@@ -2,18 +2,14 @@
 # GITHUB COMMANDS:
 ----------------
 
-Username: 	ANTZ411  
-Password:	(cap)-------a4--
+Username: 	ANTZ--1  
+Password:	(cap)-------a--1
+email: infinitum?
 
-Username: 	ANTZ314  
+Username: 	ANTZ3--  
 Password:	--------aPi3
+email: gmail2
 
-----------------------------  
-#### file.md:  
-
-    $ markdown_edit  
-    $ markdown_edit README.md  
-    $ markdown_edit -f readme.html README.md
 
 #### [Cheatsheet:](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
