@@ -18,6 +18,22 @@ email: gmail2
 [POUWH Repo](https://github.com/Antz411/POUWH.git)
 
 ----------------------------
+#### Replace GIT folder on local system:  
+----------------------------
+**(include updates)**
+Back up the entire folder with all changes to update to the Github Repo  
+Delete the entire folder from the directory you want the master folder to be.  
+Open the Github Repo and copy the repo URL.  
+
+	$ git clone http://github.com/path/to/repo
+Copy and paste (replace) files in new Git folder.
+Once replaced, upload to git location.
+
+	$ git add .
+	$ git commit -m "comment"
+	$ git push origin master
+
+----------------------------
 #### Upload a new folder to Repo:
 ----------------------------
 create a new repository:  
