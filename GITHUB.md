@@ -17,6 +17,13 @@ email: gmail2
 [GITHUB Tutorial:](http://rogerdudler.github.io/git-guide/)  
 [POUWH Repo](https://github.com/Antz411/POUWH.git)
 
+---------------------------------------
+#### To get a single file:
+First navigate to the file, then click the  **RAW** button.
+Use the raw URL in the following **wget** command:
+
+	$ wget -O filename.py https://raw.githubusercontent.com/ANTZ314/Crypto/master/My_Crypto/rnn%5B2018%5D.py
+
 ----------------------------
 #### Replace GIT folder on local system:  
 ----------------------------
