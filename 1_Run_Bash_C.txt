@@ -1,0 +1,109 @@
+====================================================
+        C / GCC / WIRINGPI
+====================================================
+
+----------------------------------------------------
+create your CMakeLists.txt			   |
+
+----------------------------------------------------
+cmake_minimum_required(VERSION 2.8)
+project( DisplayImage )
+find_package( OpenCV REQUIRED )
+add_executable( DisplayImage DisplayImage.cpp )	    
+target_link_libraries( DisplayImage ${OpenCV_LIBS} )
+
+----------------------------------------------------
+cd <FileName_directory>
+cmake .
+
+make
+
+./ExFileName
+
+====================================================
+->Goto the folder the 'c' file is in then run:
+->(with test1 being the 'c' file)
+
+gcc -o test1 -Wall -I/usr/local/include -L/usr/local/lib test1.c -lwiringPi
+
+OR
+
+-> gcc file.c -o exfile
+-> Then to build and run:
+-> sudo ./test1
+
+---------------------------------------------------
+====================================================
+                    BASH SCRIPT
+====================================================
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+	gedit path/folder/file.c
+
+Compile and create object file:
+	gcc -o file file.c
+
+Execute (object name):
+	./file
+--------------------------------------------
+		EXAMPLE:
+--------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SHELLSCRIPT "\
+#/bin/bash \n\
+ \n\
+"
+
+int main()
+{
+    puts("Will execute sh with the following script :");
+    system(SHELLSCRIPT);
+    return 0;
+}
+
+--------------------------------------------
+
+=========================================
+How to install cmake 3.2 on ubuntu 14.04
+=========================================
+
+Installation by a PPA (Upgrade to 3.2)
+
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:george-edison55/cmake-3.x
+$ sudo apt-get update
+
+When cmake is not yet installed:
+$ sudo apt-get install cmake
+
+When cmake is already installed:
+$ sudo apt-get upgrade
+
+Compile it yourself
+
+Currently, the latest version is 3.2.2, the following instructions based on this version. You should therefore check this URL and adjust the file name accordingly.
+
+$ sudo apt-get install build-essential
+$ wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz
+$ tar xf cmake-3.2.2.tar.gz
+$ cd cmake-3.2.2
+$ ./configure
+$ make
+
+Now you can have to choose an installation type to decide, I recommend installing with checkinstall, as this creates a DEB package.
+
+With checkinstall
+
+$ sudo apt-get install checkinstall
+$ sudo checkinstall
+
+With make install
+
+        sudo make install
+
+
+
