@@ -3,6 +3,23 @@
 SSH Control of the console:
 ============================================
 ============================================
+
+----------------------------------------
+Disk Space, Memory Use, and CPU Load:
+----------------------------------------
+Disk Usage:
+du 		-h 	-> human readable
+		-s	-> summary
+
+Disk Free:
+df
+
+Memory Summary:
+free
+
+----------------------------------------
+SSH:
+----------------------------------------
 Download/update on both systems:
 $ sudo apt-get install ssh
 
