@@ -8,14 +8,19 @@ SSH Control of the console:
 Disk Space, Memory Use, and CPU Load:
 ----------------------------------------
 Disk Usage:
-du 		-h 	-> human readable
-		-s	-> summary
+-> du 	  -h 	-> human readable
+		  -s	-> summary
 
 Disk Free:
-df
+-> df
 
 Memory Summary:
-free
+-> free
+
+List all installed packages:
+-> dpkg --get-selections | less
+-> 'q' to exit
+
 
 ----------------------------------------
 SSH:
@@ -33,6 +38,31 @@ From host PC side:
 $ ssh pi@192.168...
 -> password: romans
 
+--------------------------------------------
+Exit ssh & to return to normal terminal:
+$ exit
+
+
+============================================
+FILE TRANSFER: 
+============================================
+
+CoPy (SCP) files to the RPi:
+-> scp file.ext pi@192.168.x.xxx:/home/pi/
+
+
+CoPy (SCP) files from the RPi:
+-> scp pi@192.168.x.xxx:/home/pi/file.ext /home/antz/path
+
+Copy multiple files from local to remote:
+-> scp myfile.txt myfile2.txt pi@192.168.x.xxx:/remote/folder/
+
+Copy all files from local to remote:
+$ scp * remoteuser@remoteserver:/remote/folder/
+
+Copy all files and folders recursively from local to remote
+$ scp -r * remoteuser@remoteserver:/remote/folder/
+
 ----------------------------------------
 Now basic cross compile:
 ----------------------------------------
@@ -42,59 +72,22 @@ $ scp antz@192.168.8.103:pidev/test/hello .
 Run the compiled file:
 $ ./hello
 
------------------------------------------------
-Secure CoPy (SCP) files to the RPi:
------------------------------------------------
--> scp file.ext pi@192.168.x.xxx:/home/pi/
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+    gedit path/folder/file.c
 
---------------------------------------------
-Secure CoPy (SCP) files from the RPi:
---------------------------------------------
--> scp pi@192.168.x.xxx:/home/pi/file.ext /home/antz/path
+Compile and create object file:
+    gcc -o file file.c
 
---------------------------------------------
-Exit ssh & to return to normal terminal:
-$ exit
+Execute (object name):
+    ./file
+
 
 ============================================
-List all installed packages:
-============================================
--> dpkg --get-selections | less
--> 'q' to exit
---------------------------------------------
-
---------------------------------------------
-Default video player:
--> omxplayer filename.h264
-
----------------------------
-AUDIO SETTING (+OMXPlayer):
----------------------------
-To get sound out the headphone jack type:
--> sudo modprobe snd_bcm2835
--> sudo amixer cset numid=3 1
-
-To get sound out the HDMI
--> sudo modprobe snd_bcm2835
--> sudo amixer cset numid=3 0
-
-Trouble with omxplayer
-
-set the -o output for 3.5 audio jack
--> omxplayer -o local
-
-set the -o output for hdmi
--> omxplayer -o hdmi 
-
----------------------------
----------------------------
-Download from Youtube
----------------------------
-sudo youtube-dl (Web-Link)
-
----------------------------
 Basic Commands
----------------------------
+============================================
 space in file name - use '\ '
 date	 - see date and time
 cal	 - view calendar
@@ -192,26 +185,34 @@ Most of the times you only need to:
     sudo make install
 
 --------------------------------------------
-Create & run C file from Treminal:
+Corrupt USB / SD Card:
 --------------------------------------------
-create c file:
-	gedit path/folder/file.c
+List the connected devices
+$ sudo parted -l
 
-Compile and create object file:
-	gcc -o file file.c
-
-Execute (object name):
-	./file
+Write all zeros till the end:
+$ sudo dd if=/dev/zero of=/dev/sdb bs=4M			<-- USB
+$ sudo dd if=/dev/zero of=/dev/sdb bs=4096 count=1	<-- SD card 
 
 --------------------------------------------
-VLC Video Stutter:
-------------------
+Default video player:
+-> omxplayer filename.h264
 
-Tools->Preferences->All->Input Codecs->Video codecs->FFmpeg:
--Check "Allow speed tricks"
--Skip loop filter... ->ALL
---------------------------------------------
+---------------------------
+AUDIO SETTING (+OMXPlayer):
+---------------------------
+To get sound out the headphone jack type:
+-> sudo modprobe snd_bcm2835
+-> sudo amixer cset numid=3 1
 
+To get sound out the HDMI
+-> sudo modprobe snd_bcm2835
+-> sudo amixer cset numid=3 0
 
+Trouble with omxplayer
 
+set the -o output for 3.5 audio jack
+-> omxplayer -o local
 
+set the -o output for hdmi
+-> omxplayer -o hdmi 

@@ -25,6 +25,12 @@ $ sudo apt-get install gnome-terminal
 $ sudo apt-get install --reinstall ubuntu-desktop
 
 --------------------------------------------
+Re-Sync Time and Date:
+--------------------------------------------
+sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+sudo dpkg-reconfigure tzdata
+
+--------------------------------------------
 To Restart Unity Panel Bar:
 --------------------------------------------
 You can press ALT+F2 -> Run Command: “unity”
@@ -42,14 +48,28 @@ Search for specific package:
 apt-cache search package-name
 
 --------------------------------------------
-Corrupt USB:
+Corrupt USB / SD Card:
 --------------------------------------------
+List the connected devices
+$ sudo parted -l
+OR
+$ df -h 					--> The disk you want to check should not be listed
+$ sudo fdisk -l
+
+make sure it's unmounted:
+$ umount /dev/sdb			--> mmcblk0
+
+Check for Errors:
+$ sudo fsck -A /dev/sdb
+
 Write all zeros till the end:
-$ sudo dd if=/dev/zero of=/dev/sdb bs=4M
+$ sudo dd if=/dev/zero of=/dev/sdb bs=4M			<-- USB
+$ sudo dd if=/dev/zero of=/dev/sdb bs=4096 count=1	<-- SD card 
+
+To Confirm zero write:
+dd if=/dev/sda | hexdump -C | head
 
 Then GParted -> Device -> Create Partition Table
-
-Then can vreate new Partition
 
 --------------------------------------------
 Memory Checks:
@@ -103,25 +123,20 @@ $ chmod 700 file.ext	- read/write/execute for me only
 			PACKAGES:
 =========================================================================
 To get a list of packages installed locally do this in your terminal:
-
 -> dpkg --get-selections | grep -v deinstall
 
 (The -v tag "inverts" grep to return non-matching lines)
 
 To get a list of a specific package installed:
-
 -> dpkg --get-selections | grep postgres
 
 To save that list to a text file called packages on your desktop do this in your terminal:
-
 -> dpkg --get-selections | grep -v deinstall > ~/Desktop/packages
 
 Alternatively, simply use
-
 -> dpkg -l
 
 The apt tool on Ubuntu 14.04 and above makes this very easy.
-
 -> apt list --installed
 
 =========================================================================
