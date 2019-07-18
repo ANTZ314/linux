@@ -37,6 +37,11 @@ Extract .rar folder:
 -> unrar e -r Name.rar
 
 --------------------------------------------
+Extract img.xz image files:
+--------------------------------------------
+unxz filename.img.xz
+
+--------------------------------------------
 Run file in Default Program:
 --------------------------------------------
 -> xdg-open file.ext

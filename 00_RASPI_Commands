@@ -184,6 +184,26 @@ Most of the times you only need to:
 
     sudo make install
 
+------------------------------------------------------
+To display an image:
+------------------------------------------------------
+-> sudo apt install fim
+-> fim -a pic.jpg
+
+Multiple images:
+-> fim -a *.jpg
+
+PageUp/Down      Prev/Next image
++/-              Zoom in/out
+a                Autoscale
+w                Fit to width
+h                Fit to height
+j/k              Pan down/up
+f/m              flip/mirror
+R/r              Rotate 10 degrees CW/CCW
+ESC/q            Quit
+
+
 --------------------------------------------
 Corrupt USB / SD Card:
 --------------------------------------------

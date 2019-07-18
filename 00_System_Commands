@@ -1,6 +1,13 @@
 =========================================================================
 Ubuntu Package and System Manipulation Commands:
 =========================================================================
+
+--------------------------------------------
+Re-Sync Time and Date:
+--------------------------------------------
+sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+sudo dpkg-reconfigure tzdata
+
 --------------------------------------------
 View CPU information:
 --------------------------------------------
@@ -23,12 +30,6 @@ Ctrl+Alt+F1
 $ sudo apt-get install python3-all
 $ sudo apt-get install gnome-terminal
 $ sudo apt-get install --reinstall ubuntu-desktop
-
---------------------------------------------
-Re-Sync Time and Date:
---------------------------------------------
-sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
-sudo dpkg-reconfigure tzdata
 
 --------------------------------------------
 To Restart Unity Panel Bar:
@@ -102,6 +103,36 @@ List all installed packages:
 --------------------------------------------
 -> dpkg --list
 -> dpkg -l | less
+
+============================================
+Virtual Environment:
+============================================
+Get and Install:
+
+$ sudo pip install virtualenv virtualenvwrapper
+$ sudo rm -rf ~/get-pip.py ~/.cache/pip
+
+$ echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.profile
+$ echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.profile
+$ echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.profile
+$ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.profile
+	
+$ source ~/.profile
+
+--------------------------------------------
+Virtual Environment Commands:
+--------------------------------------------
+List all VirtEnvs:
+$ lsvirtualenv -b
+
+Create new env:
+$ mkvirtualenv EnvName -p python3
+
+To Activate:
+$ workon cv
+
+Exit:
+$ deactivate
 
 --------------------------------------------
 View which version is installed:
