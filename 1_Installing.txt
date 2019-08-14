@@ -61,7 +61,7 @@ INSTALLING .deb FILES:
 To install it, open a terminal, direct it to the folder where it has been downloaded to 
 with cd and use the dpkg command:
 --------------------------------
-cd /home/pi/Downloads/
+cd /home/antz/Downloads/
 sudo dpkg -i debfile.deb
 
 ---------------

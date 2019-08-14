@@ -16,6 +16,7 @@ Disk Free:
 
 Memory Summary:
 -> free
+-> free -m
 
 List all installed packages:
 -> dpkg --get-selections | less

@@ -49,6 +49,17 @@ Search for specific package:
 apt-cache search package-name
 
 --------------------------------------------
+Not mounting the SD Card:
+--------------------------------------------
+lspci
+
+-> Check Read/Write Access:
+find /sys -iname \*mmc\* | sed 's#$#/uevent#' | xargs ls -l
+
+-> Give all the mmc uevent files the same access:
+find /sys -iname \*mmc\* | sed 's#$#/uevent#' | xargs sudo chmod a+r
+
+--------------------------------------------
 Corrupt USB / SD Card:
 --------------------------------------------
 List the connected devices
