@@ -22,6 +22,28 @@ List all installed packages:
 -> dpkg --get-selections | less
 -> 'q' to exit
 
+----------------------------------------
+Clone Disk from SD to backup:
+----------------------------------------
+-> List all drives & find:
+sudo fdisk -l
+
+-> Create the Clone:
+sudo dd if=/dev/sdb of=~/raspbian_backup.img
+
+----------------------------------------
+Write cloned disk image to SD:
+----------------------------------------
+-> Make sure that the SD card’s partitions are unmounted:
+
+-> List mounted drives:
+sudo mount | grep sdb 			(replace sdb with drive name)
+
+-> unmount the listed ones:
+sudo umount /dev/sdb1 /dev/sdb2 /dev/sdb3
+
+-> Use 'dd' to write the image:
+sudo dd if=~/raspbian_backup.img of=/dev/sdb
 
 ----------------------------------------
 SSH:
@@ -43,6 +65,64 @@ $ ssh pi@192.168...
 Exit ssh & to return to normal terminal:
 $ exit
 
+
+============================================
+Basic Commands
+============================================
+space in file name - use '\ '
+date        - see date and time
+cal         - view calendar
+df          - view free disk space
+pwd         - Print name of current working directory
+cd          - Change directory
+cd ..       - Goto parent folder
+cd ./xx     - Goto child folder
+ls          - List directory contents
+cp          - Copy files and directories
+mv          - Move/rename files and directories
+mkdir       - Create directories
+rm          - Remove files and directories
+ln          - Create hard and symbolic links
+
+Open any file in its Default App:
+xdg-open <file_name>
+
+rm -rf filepath/filename
+Remove a file:
+
+cp item... directory
+copy multiple items into a directory
+
+cp item1 item2
+copy single file/directory (item1) to file/directory (item2)
+
+Wildcards [pg46]:
+*   - All Files
+g*  - Any file beginning with 'g'
+b* .txt - Any file beginning with 'b' & ending with '.txt'
+[abc]*  - Any file starting with 'a', 'b' or 'c'
+
+Hardlinks
+Symbolic Links
+---------------------------
+command -options arguments
+---------------------------
+-a  --all       * List all files (even hidden)
+-d  --directory * Use this option in conjunction                  with the -l option to see details                   about the directory rather than its                 contents.
+-F  --classify  * This option will append an indicator 
+              character to the end of each listed name.
+-h  --human-readable * In long format listings, display file 
+               sizes in human readable format rather 
+               than in bytes
+-l  --      * Display results in long format
+-r  --reverse   * Display the results in reverse order.
+-S  --      * Sort results by file size.
+-t  --      * Sort by modification time
+-i  --interactive   * Prompt the user to overwrite files
+-u  --update    * only files that are new or don't exist
+-v  --verbose   * Display info messages during move
+
+--------------------------------------------
 
 ============================================
 FILE TRANSFER: 
@@ -85,64 +165,6 @@ Compile and create object file:
 Execute (object name):
     ./file
 
-
-============================================
-Basic Commands
-============================================
-space in file name - use '\ '
-date	 - see date and time
-cal	 - view calendar
-df	 - view free disk space
-pwd	 - Print name of current working directory
-cd	 - Change directory
-cd ..	 - Goto parent folder
-cd ./xx	 - Goto child folder
-ls	 - List directory contents
-cp 	– Copy files and directories
-mv 	– Move/rename files and directories
-mkdir 	– Create directories
-rm 	– Remove files and directories
-ln 	– Create hard and symbolic links
-
-Open any file in its Default App:
-xdg-open <file_name>
-
-rm -rf filepath/filename
-Remove a file:
-
-cp item... directory
-copy multiple items into a directory
-
-cp item1 item2
-copy single file/directory (item1) to file/directory (item2)
-
-Wildcards [pg46]:
-*	- All Files
-g*	- Any file beginning with 'g'
-b* .txt	- Any file beginning with 'b' & ending with '.txt'
-[abc]*	- Any file starting with 'a', 'b' or 'c'
-
-Hardlinks
-Symbolic Links
----------------------------
-command -options arguments
----------------------------
--a	--all		* List all files (even hidden)
--d	--directory	* Use this option in conjunction 				  with the -l option to see details 				  about the directory rather than its 				  contents.
--F	--classify	* This option will append an indicator 
-			  character to the end of each listed name.
--h	--human-readable * In long format listings, display file 
-			   sizes in human readable format rather 
-			   than in bytes
--l	--		* Display results in long format
--r	--reverse	* Display the results in reverse order.
--S	--		* Sort results by file size.
--t	--		* Sort by modification time
--i	--interactive	* Prompt the user to overwrite files
--u	--update	* only files that are new or don't exist
--v	--verbose	* Display info messages during move
-
---------------------------------------------
 --------------------------------------------
 'less' is a Text Viewer:
 open -> less filename	
@@ -205,9 +227,35 @@ R/r              Rotate 10 degrees CW/CCW
 ESC/q            Quit
 
 
---------------------------------------------
+============================================
+Setting Time Date:
+============================================
+
+sudo dpkg-reconfigure tzdata # Select timezone
+
+-OR-
+
+sudo timedatectl set-time 'yyyy-mm-dd hh-mm'
+
+-OR-
+
+-> Manually set the time to be somewhat accurate:
+sudo date -s "mm/dd/yyyy 11:00"
+
+-OR-
+
+-> Manually force time update:
+sudo systemctl stop ntp.service
+sudo ntpd -gqc /etc/ntpd.conf
+sudo systemctl start ntp.service
+
+-OR-
+
+sudo raspi-config -> locale settings -> select timezone
+
+============================================
 Corrupt USB / SD Card:
---------------------------------------------
+============================================
 List the connected devices
 $ sudo parted -l
 
@@ -219,9 +267,9 @@ $ sudo dd if=/dev/zero of=/dev/sdb bs=4096 count=1	<-- SD card
 Default video player:
 -> omxplayer filename.h264
 
----------------------------
+============================================
 AUDIO SETTING (+OMXPlayer):
----------------------------
+============================================
 To get sound out the headphone jack type:
 -> sudo modprobe snd_bcm2835
 -> sudo amixer cset numid=3 1

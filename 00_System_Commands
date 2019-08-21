@@ -2,44 +2,44 @@
 Ubuntu Package and System Manipulation Commands:
 =========================================================================
 
---------------------------------------------
+-------------------------------------------------------------------------
 Re-Sync Time and Date:
---------------------------------------------
+-------------------------------------------------------------------------
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 sudo dpkg-reconfigure tzdata
 
---------------------------------------------
+-------------------------------------------------------------------------
 View CPU information:
---------------------------------------------
+-------------------------------------------------------------------------
 $ cat /proc/cpuinfo
 
---------------------------------------------
+-------------------------------------------------------------------------
 View free memory:
---------------------------------------------
+-------------------------------------------------------------------------
 $ free -o -h
 
---------------------------------------------
+-------------------------------------------------------------------------
 View which folder are taking up the most space
---------------------------------------------
+-------------------------------------------------------------------------
 $ sudo du -xh / | grep -P "G\t"
 
---------------------------------------------
+-------------------------------------------------------------------------
 Restore Ubuntu Desktop (due to python3.5):
---------------------------------------------
+-------------------------------------------------------------------------
 Ctrl+Alt+F1
 $ sudo apt-get install python3-all
 $ sudo apt-get install gnome-terminal
 $ sudo apt-get install --reinstall ubuntu-desktop
 
---------------------------------------------
+-------------------------------------------------------------------------
 To Restart Unity Panel Bar:
---------------------------------------------
+-------------------------------------------------------------------------
 You can press ALT+F2 -> Run Command: “unity”
 
 OR you could use:
 $ sudo service gdm restart
 
---------------------------------------------
+-------------------------------------------------------------------------
 List aal installed packages:
 $ apt list --installed
 $ dpkg -l
@@ -48,9 +48,9 @@ $ dpkg --get-selections | grep -v deinstall
 Search for specific package:
 apt-cache search package-name
 
---------------------------------------------
+-------------------------------------------------------------------------
 Not mounting the SD Card:
---------------------------------------------
+-------------------------------------------------------------------------
 lspci
 
 -> Check Read/Write Access:
@@ -59,9 +59,9 @@ find /sys -iname \*mmc\* | sed 's#$#/uevent#' | xargs ls -l
 -> Give all the mmc uevent files the same access:
 find /sys -iname \*mmc\* | sed 's#$#/uevent#' | xargs sudo chmod a+r
 
---------------------------------------------
+-------------------------------------------------------------------------
 Corrupt USB / SD Card:
---------------------------------------------
+-------------------------------------------------------------------------
 List the connected devices
 $ sudo parted -l
 OR
@@ -83,37 +83,66 @@ dd if=/dev/sda | hexdump -C | head
 
 Then GParted -> Device -> Create Partition Table
 
---------------------------------------------
+-------------------------------------------------------------------------
 Memory Checks:
---------------------------------------------
+-------------------------------------------------------------------------
 -> lsusb		- List USB devices (and hardware)
 			- Check used/available system memory
 -> lspci | grep USB
 
---------------------------------------------
+-------------------------------------------------------------------------
 Possible USB Hub Reset:
---------------------------------------------
+-------------------------------------------------------------------------
 -> sudo su
 -> echo -n "0000:00:1a.0" | tee /sys/bus/pci/drivers/ehci-pci/unbind
 -> echo -n "0000:00:1d.0" | tee /sys/bus/pci/drivers/ehci-pci/unbind
 -> echo -n "0000:00:1a.0" | tee /sys/bus/pci/drivers/ehci-pci/bind
 -> echo -n "0000:00:1d.0" | tee /sys/bus/pci/drivers/ehci-pci/bind
 
---------------------------------------------
+-------------------------------------------------------------------------
 Force erase a USB:
---------------------------------------------
+-------------------------------------------------------------------------
 wipefs -a /dev/your-device
 
---------------------------------------------
+-------------------------------------------------------------------------
 Network Checks:
---------------------------------------------
+-------------------------------------------------------------------------
 -> ifconfig
 
---------------------------------------------
+-------------------------------------------------------------------------
+Link 2 images (imagemagic):
+-------------------------------------------------------------------------
+Horizontally:
+convert file1.png file2.png +append out.png 
+
+Vertically:
+convert file1.png file2.png -append out.png 
+
+=========================================================================
+			PACKAGES:
+=========================================================================
+-------------------------------------------------------------------------
 List all installed packages:
---------------------------------------------
+-------------------------------------------------------------------------
 -> dpkg --list
 -> dpkg -l | less
+
+To get a list of packages installed locally do this in your terminal:
+-> dpkg --get-selections | grep -v deinstall
+
+(The -v tag "inverts" grep to return non-matching lines)
+
+To get a list of a specific package installed:
+-> dpkg --get-selections | grep postgres
+
+To save that list to a text file called packages on your desktop do this in your terminal:
+-> dpkg --get-selections | grep -v deinstall > ~/Desktop/packages
+
+Alternatively, simply use
+-> dpkg -l
+
+The apt tool on Ubuntu 14.04 and above makes this very easy.
+-> apt list --installed
 
 ============================================
 Virtual Environment:
@@ -160,26 +189,6 @@ Permissions:
 --------------------------------------------
 $ chmod 777 *.py	- all permissions aloud for all python files
 $ chmod 700 file.ext	- read/write/execute for me only
-
-=========================================================================
-			PACKAGES:
-=========================================================================
-To get a list of packages installed locally do this in your terminal:
--> dpkg --get-selections | grep -v deinstall
-
-(The -v tag "inverts" grep to return non-matching lines)
-
-To get a list of a specific package installed:
--> dpkg --get-selections | grep postgres
-
-To save that list to a text file called packages on your desktop do this in your terminal:
--> dpkg --get-selections | grep -v deinstall > ~/Desktop/packages
-
-Alternatively, simply use
--> dpkg -l
-
-The apt tool on Ubuntu 14.04 and above makes this very easy.
--> apt list --installed
 
 =========================================================================
 			CLEANUP:
