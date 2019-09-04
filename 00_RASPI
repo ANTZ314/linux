@@ -1,9 +1,3 @@
-============================================
-============================================
-SSH Control of the console:
-============================================
-============================================
-
 ----------------------------------------
 Disk Space, Memory Use, and CPU Load:
 ----------------------------------------
@@ -36,6 +30,9 @@ Write cloned disk image to SD:
 ----------------------------------------
 -> Make sure that the SD card’s partitions are unmounted:
 
+-> List all drives & find:
+sudo fdisk -l
+
 -> List mounted drives:
 sudo mount | grep sdb 			(replace sdb with drive name)
 
@@ -45,9 +42,11 @@ sudo umount /dev/sdb1 /dev/sdb2 /dev/sdb3
 -> Use 'dd' to write the image:
 sudo dd if=~/raspbian_backup.img of=/dev/sdb
 
-----------------------------------------
-SSH:
-----------------------------------------
+============================================
+============================================
+SSH Control of the console:
+============================================
+============================================
 Download/update on both systems:
 $ sudo apt-get install ssh
 
@@ -60,6 +59,26 @@ $ ifconfig
 From host PC side:
 $ ssh pi@192.168...
 -> password: romans
+
+============================================
+FILE TRANSFER: 
+============================================
+
+CoPy (SCP) files to the RPi:
+-> scp file.ext pi@192.168.x.xxx:/home/pi/
+
+
+CoPy (SCP) files from the RPi:
+-> scp pi@192.168.x.xxx:/home/pi/file.ext /home/antz/path
+
+Copy multiple files from local to remote:
+-> scp myfile.txt myfile2.txt pi@192.168.x.xxx:/remote/folder/
+
+Copy all files from local to remote:
+$ scp * remoteuser@remoteserver:/remote/folder/
+
+Copy all files and folders recursively from local to remote
+$ scp -r * remoteuser@remoteserver:/remote/folder/
 
 --------------------------------------------
 Exit ssh & to return to normal terminal:
@@ -124,28 +143,8 @@ command -options arguments
 
 --------------------------------------------
 
-============================================
-FILE TRANSFER: 
-============================================
-
-CoPy (SCP) files to the RPi:
--> scp file.ext pi@192.168.x.xxx:/home/pi/
-
-
-CoPy (SCP) files from the RPi:
--> scp pi@192.168.x.xxx:/home/pi/file.ext /home/antz/path
-
-Copy multiple files from local to remote:
--> scp myfile.txt myfile2.txt pi@192.168.x.xxx:/remote/folder/
-
-Copy all files from local to remote:
-$ scp * remoteuser@remoteserver:/remote/folder/
-
-Copy all files and folders recursively from local to remote
-$ scp -r * remoteuser@remoteserver:/remote/folder/
-
 ----------------------------------------
-Now basic cross compile:
+Basic cross compile:
 ----------------------------------------
 From RasPi side, copy compiled file from host:
 $ scp antz@192.168.8.103:pidev/test/hello .

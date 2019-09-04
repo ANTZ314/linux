@@ -1,0 +1,41 @@
+=====================================================
+VIRTUAL ENVIRONMENT:
+=====================================================
+
+-----------------------------------------------------
+Install Virtualenv:
+-----------------------------------------------------
+sudo apt-get install python-virtualenv
+sudo easy_install virtualenv
+sudo pip install virtualenv
+
+
+-----------------------------------------------------
+Verify if Virtualenv is installed:
+-----------------------------------------------------
+virtualenv --version
+
+
+-----------------------------------------------------
+Setup and Use Virtualenv:
+-----------------------------------------------------
+-> create a directory:
+mkdir ~/virtualenvironment
+
+-> Create the environment:
+virtualenv ~/virtualenvironment/my_new_app
+
+-> To activate:
+source ~/virtualenvironment/my_new_app/bin/activate
+
+
+-----------------------------------------------------
+Exit the environment:
+-----------------------------------------------------
+deactivate
+
+
+-----------------------------------------------------
+Remove the environment:
+-----------------------------------------------------
+-> Delete the containing folder?
