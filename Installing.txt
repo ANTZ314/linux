@@ -1,20 +1,21 @@
-------------------------------------------------------
-To install some file *.tar.xz:
-------------------------------------------------------
-Decompress:
+============================================
+			INSTALLING:
+============================================
+--------------------------------------------
+Unzip file:
+--------------------------------------------
+unzip file.zip -d destination_folder
 
-tar xf [filename]
+--------------------------------------------
+Extract .rar folder:
+--------------------------------------------
+-> sudo apt-get install unrar		<- if not already
+-> unrar e -r Name.rar
 
-This will expand the contents of the file to a folder. Then the commands are, from the folder:
-
-./configure
-make
-sudo make install
-
-============================
-Possibly:
-tl;dr, use tar xf [filename]
-============================
+--------------------------------------------
+Extract img.xz image files:
+--------------------------------------------
+unxz filename.img.xz
 
 ------------------------------------------------------
 Extract any ".gz" file:
@@ -27,22 +28,59 @@ To install some file *.tar.gz:
 ------------------------------------------------------
 Open a console, and go to the directory where the file is
 
-->  Type: tar -zxv file.tar.gz
+->  Type: tar xzf file.tar.gz
+	  tar -zxv file.tar.gz
+
+-> [x] The x stand for extract, it is mandatory when a tar file shall be extracted.
+-> [z] The z option tells tar that the archive that shall be unpacked is in gzip format.
+-> [f] This option instructs tar to read the archive content from a file, in this case the file myarchive.tar.gz
+-> [v] The stands for verbose, it will show the file names while they get unpacked
 
 Read the file INSTALL and/or README to know if you need some dependencies.
 
 Most of the times you only need to:
 
 ->  type ./configure
-
 ->  make
-
 ->  sudo make install
 
-------------------------------
+
+------------------------------------------------------
+Create tar.gz Files:
+------------------------------------------------------
+tar pczf myarchive.tar.gz /home/till/mydocuments
+
+-> [p] This option stand for "preserve", it instructs tar to store details on file owner and file permissions in the archive.
+-> [c] Stands for create. This option is mandatory when a file is created.
+-> [z] The z option enables gzip compression.
+-> [f] The file option tells tar to create an archive file. Tar will send the output to stdout if this option is omitted.
+
+
+------------------------------------------------------
+To install some file *.tar.xz:
+------------------------------------------------------
+Decompress:
+
+tar xf [filename]
+
+This will expand the contents of the file to a folder. 
+Then the commands are, from the folder:
+
+./configure
+make
+sudo make install
+
+============================
+Possibly:
+tl;dr, use tar xf [filename]
+============================
+
+
+------------------------------------------------------
 To install "file.run" file:
-------------------------------
-Assume the file is called some-app.run and is in the folder /home/user/Downloads. You will need to modify these instructions to fit your situation.
+------------------------------------------------------
+Assume the file is called some-app.run and is in the folder /home/user/Downloads. 
+You will need to modify these instructions to fit your situation.
 
     Open a terminal (Applications->Accessories->Terminal).
 
@@ -51,65 +89,42 @@ Assume the file is called some-app.run and is in the folder /home/user/Downloads
 
     enter: ./some-app.run
 
-    if step 4 fails with a message including 'permission denied', try entering sudo ./some-app.run (you will need to enter your password for this).
+    if step 4 fails with a message including 'permission denied', 
+    try entering sudo ./some-app.run (you will need to enter your password for this).
 
-=======================================
-=======================================
+
+------------------------------------------------------
 INSTALLING .deb FILES:
-=======================================
-=======================================
+------------------------------------------------------
 To install it, open a terminal, direct it to the folder where it has been downloaded to 
 with cd and use the dpkg command:
 --------------------------------
 cd /home/antz/Downloads/
 sudo dpkg -i debfile.deb
 
----------------
-To Play a file:
----------------
-cd /home/pi/Vid_Folder
-omxplayer video.mp4
 
----------------
-If using HDMI:
---------------
-omxplayer -o hdmi myvideo.mp4
+============================================
+				REMOVE:
+============================================
+-------------------------------
+To Completely Remove a Package:
+-------------------------------
 
-=======================================
+-> sudo apt-get purge --auto-remove packagename
 
-==========================
-Other Command Line Options
-==========================
-If you type :
+it will purge required packages along with dependencies that are installed 
+with that packages. --auto-remove option work similar to  sudo apt-get autoremove
 
-omxplayer
-you will be presented with a list of the available command line options :
 
-Usage: omxplayer [OPTIONS] [FILE]
-Options :
--h / --help                print this help
--n / --aidx  index         audio stream index    : e.g. 1
--o / --adev  device        audio out device      : e.g. hdmi/local
--i / --info                dump stream format and exit
--s / --stats               pts and buffer stats
--p / --passthrough         audio passthrough
--d / --deinterlace         deinterlacing
--w / --hw                  hw audio decoding
--3 / --3d mode             switch tv into 3d mode (e.g. SBS/TB)
--y / --hdmiclocksync       adjust display refresh rate to match
-                           video (default)
--z / --nohdmiclocksync     do not adjust display refresh rate to
-                           match video
--t / --sid index           show subtitle with index
--r / --refresh             adjust framerate/resolution to video
--l / --pos                 start position (in seconds)
-    --boost-on-downmix     boost volume when downmixing
-    --subtitles path       external subtitles in UTF-8 srt form at
-    --font path            subtitle font
-                           (default: /usr/share/fonts/truetype/
-                                      freefont/FreeSans.ttf)
-    --font-size size       font size as thousandths of screen height
-                           (default: 55)
-    --align left/center    subtitle alignment (default: left)
-    --lines n              number of lines to accommodate in the
-                           subtitle buffer (default: 3)
+---------------------------------------
+Other ways of completely removing Apps:
+---------------------------------------
+sudo apt-get remove application
+sudo apt-get remove application*
+
+sudo apt-get remove --purge application
+sudo apt-get remove --purge application*
+
+sudo apt-get purge application
+sudo apt-get purge application*
+

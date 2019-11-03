@@ -5,13 +5,26 @@ Ubuntu Package and System Manipulation Commands:
 -------------------------------------------------------------------------
 Re-Sync Time and Date:
 -------------------------------------------------------------------------
-sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
-sudo dpkg-reconfigure tzdata
+$ sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+$ sudo dpkg-reconfigure tzdata
 
 -------------------------------------------------------------------------
 View CPU information:
 -------------------------------------------------------------------------
 $ cat /proc/cpuinfo
+$ less /proc/cpuinfo
+
+-------------------------------------------------------------------------
+Process commands: 
+-------------------------------------------------------------------------
+top 		<- show all system info, processes etc
+ps -ef		<- show all running processes
+
+To search for specific string in 'ps':
+$ ps -ef | grep "chrome"
+
+Then kill:
+kill PID		<- copy paste the PID (first number)
 
 -------------------------------------------------------------------------
 View free memory:

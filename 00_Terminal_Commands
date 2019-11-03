@@ -13,44 +13,12 @@ Go back one folder (to parent):
 Go into Folder with ' ' space in name:
 -> cd ./Untitled\ Folder
 
---------------------------------------------
-Create & run C file from Treminal:
---------------------------------------------
-create c file:
-	gedit path/folder/file.c
-
-Compile and create object file:
-	gcc -o file file.c
-
-Execute (object name):
-	./file
-
---------------------------------------------
-Unzip file:
---------------------------------------------
-unzip file.zip -d destination_folder
-
---------------------------------------------
-Extract .rar folder:
---------------------------------------------
--> sudo apt-get install unrar		<- if not already
--> unrar e -r Name.rar
-
---------------------------------------------
-Extract img.xz image files:
---------------------------------------------
-unxz filename.img.xz
 
 --------------------------------------------
 Run file in Default Program:
 --------------------------------------------
 -> xdg-open file.ext
 
---------------------------------------------
-Download from Youtube:
---------------------------------------------
-Goto folder you want download in:
-sudo youtube-dl (Web-Link)
 
 --------------------------------------------
 Find tool but dont know package name:
@@ -58,26 +26,99 @@ Find tool but dont know package name:
 -> man -k <keyword>
 
 --------------------------------------------
+View entire contents of a file:
+--------------------------------------------
+cat -n filename.ext			<- with line numbers
+head -n 5 filename.ext		<- show first 5 lines
+tail -n 10 filename.ext		<- show last 10 lines
+
+
+--------------------------------------------
 Basic Commands:
 --------------------------------------------
-space in file name - use '\ '
-date	 - see date and time
-cal	 - view calendar
-df	 - view free disk space
-pwd	 - Print name of current working directory
-cd	 - Change directory
-cd ..	 - Goto parent folder
-cd ./xx	 - Goto child folder
-ls	 - List directory contents
-cp 	– Copy files and directories
-mv 	– Move/rename files and directories
-mkdir 	– Create directories
-rm 	– Remove files
-rmdir	- Remove directories
-ln 	– Create hard and symbolic links
+space in file name, use '\ '
+date 		-> see date and time
+cal			-> view calendar month
+cal -y		-> 
+df			-> view free disk space
+pwd			-> Name of current working directory
+cd			-> Change directory
+cd ..		-> Goto parent folder
+cd ./xx		-> Goto child folder
+cp			-> Copy files and directories
+cp -R		-> Copy directory into another directory
+mv			-> Move/rename files and directories
+mkdir		-> Create directories
+rm			-> Remove files
+rmdir		-> Remove directories
+ln			-> Create hard links and symbolic links
+history		-> Show all previous commands
+locate		-> Quick find method
+touch		-> create new file
+grep 		-> search for specific content within single/multiple files
+
+--------
+LISTING:
+--------
+ls				-> List directory contents
+ls -l			-> show contents & details
+ls -lt			-> contents details sorted by 'time'
+ls -ltr			-> [reverse above] most recent file at the bottom
+ls -lSrh		-> sorted by Size, largest at the bottom (human readable)
+ls *.log		-> all files with .log suffix
+ls ????.log		-> any 4 character files ending in .log
+ls [a,k]*.log	-> any file starting 'a' or 'k', ending in .log
+
+--------------
+FIND Commands:
+--------------
+find . -name file.ext			-> start from /home, using name
+find . -name file.ext -delete	-> same, once found, delete
+find . -name folder -type d		-> find a directory
+find /loc1/loc2 -mtime -30		-> all files modified in the last 30 days
+find /loc1/loc2 -mtime +30		-> all files modified in over 30 days
+
+sudo updatedb					-> update databsae for 'locate' command
+locate file.ext					-> quick find all files with same name
+locate -l 1 file				-> limit the results to 'x' objects
+locate -c file					-> give the number of files with that name 
+									for more accurate results, add file ext.
+
+---------------------------
+command -options arguments
+---------------------------
+-a	--all			* List all files (even hidden)
+-d	--directory		* Use this option in conjunction 
+					  with the -l option to see details 				  
+						about the directory rather than its 				  
+						contents.
+-F	--classify		* This option will append an indicator 
+						character to the end of each listed name.
+-h	--human-readable * In long format listings, display file 
+						sizes in human readable format rather 
+						than in bytes
+-l	--				* Display results in long format
+-r	--reverse		* Display the results in reverse order.
+-S	--				* Sort results by file size.
+-t	--				* Sort by modification time
+-i	--interactive	* Prompt the user to overwrite files
+-u	--update		* only files that are new or don't exist
+-v	--verbose		* Display info messages during move
+
+---------
+Examples:
+---------
+Search for content in multiple files:
+grep "word" file*			<- find "word" in all files with "file" in the name
+grep "word" -i file			<- non-case sensitive
+grep "is" -w file			<- find only the full word
 
 Open any file in its Default App:
 xdg-open <file_name>
+
+Create a file:
+touch folder1/file.txt		<- if already exists, will update modified times
+touch file_{1..10}			<- create multiple files
 
 Remove a file:
 rm -rf filepath/filename
@@ -100,101 +141,54 @@ g*	- Any file beginning with 'g'
 b* .txt	- Any file beginning with 'b' & ending with '.txt'
 [abc]*	- Any file starting with 'a', 'b' or 'c'
 
-Hardlinks
-Symbolic Links
----------------------------
-command -options arguments
----------------------------
--a	--all		* List all files (even hidden)
--d	--directory	* Use this option in conjunction 				  with the -l option to see details 				  about the directory rather than its 				  contents.
--F	--classify	* This option will append an indicator 
-			  character to the end of each listed name.
--h	--human-readable * In long format listings, display file 
-			   sizes in human readable format rather 
-			   than in bytes
--l	--		* Display results in long format
--r	--reverse	* Display the results in reverse order.
--S	--		* Sort results by file size.
--t	--		* Sort by modification time
--i	--interactive	* Prompt the user to overwrite files
--u	--update	* only files that are new or don't exist
--v	--verbose	* Display info messages during move
 
---------------------------------------------
 --------------------------------------------
 'less' is a Text Viewer:
+--------------------------------------------
 open -> less filename	
 * "q" to exit
-* Up/"b" to scroll back a page
-* Down/'space' to scroll forward
+* PgUp/"b" to scroll back a page
+* PgDwn/'space' to scroll forward a page
 * Up Arrow to scroll up one line [more on pg 40]
-
-------------------------------------------------------
-To install some file *.tar.gz, you basically would do:
-------------------------------------------------------
-Open a console, and go to the directory where the file is
-
-->  Type: tar xzf file.tar.gz
-	  tar -zxv file.tar.gz
-
--> [x] The x stand for extract, it is mandatory when a tar file shall be extracted.
--> [z] The z option tells tar that the archive that shall be unpacked is in gzip format.
--> [f] This option instructs tar to read the archive content from a file, in this case the file myarchive.tar.gz
--> [v] The stands for verbose, it will show the file names while they get unpacked
-
-Read the file INSTALL and/or README to know if you need some dependencies.
-
-Most of the times you only need to:
-
-->  type ./configure
-->  make
-->  sudo make install
-
----------------------
-Create tar.gz Files:
----------------------
-tar pczf myarchive.tar.gz /home/till/mydocuments
-
--> [p] This option stand for "preserve", it instructs tar to store details on file owner and file permissions in the archive.
--> [c] Stands for create. This option is mandatory when a file is created.
--> [z] The z option enables gzip compression.
--> [f] The file option tells tar to create an archive file. Tar will send the output to stdout if this option is omitted.
-
-------------------------------
-To install "file.run" file:
-------------------------------
-Assume the file is called some-app.run and is in the folder /home/user/Downloads. You will need to modify these instructions to fit your situation.
-
-    Open a terminal (Applications->Accessories->Terminal).
-
-    enter: cd /home/user/Downloads
-    enter: chmod +x some-app.run
-
-    enter: ./some-app.run
-
-    if step 4 fails with a message including 'permission denied', try entering sudo ./some-app.run (you will need to enter your password for this).
+* 'g' to go to top of doc
+* 'G' to go to bottom of doc
+* '/' to search for specific strings
+--------------------------------------------
 
 -------------------------------
-To Completely Remove a Package:
+To Open a file in default:
 -------------------------------
+$ xdg-open filename.ext
 
--> sudo apt-get purge --auto-remove packagename
+$ omxplayer video.mp4				<- specify omxplayer
+$ omxplayer -o hdmi myvideo.mp4		<- specify omxplayer with HDMI
 
-it will purge required packages along with dependencies that are installed 
-with that packages. --auto-remove option work similar to  sudo apt-get autoremove
 
-Also:
+--------------------------------------------
+Unzip file:
+--------------------------------------------
+unzip file.zip -d destination_folder
 
-============================================
-Other ways of completely removing Apps:
-============================================
-sudo apt-get remove application
-sudo apt-get remove application*
+--------------------------------------------
+Extract .rar folder:
+--------------------------------------------
+-> sudo apt-get install unrar		<- if not already
+-> unrar e -r Name.rar
 
-sudo apt-get remove --purge application
-sudo apt-get remove --purge application*
+--------------------------------------------
+Download from Youtube:
+--------------------------------------------
+Goto folder you want download in:
+sudo youtube-dl (Web-Link)
 
-sudo apt-get purge application
-sudo apt-get purge application*
-============================================
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+	gedit path/folder/file.c
 
+Compile and create object file:
+	gcc -o file file.c
+
+Execute (object name):
+	./file
