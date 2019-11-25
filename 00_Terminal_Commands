@@ -13,17 +13,6 @@ Go back one folder (to parent):
 Go into Folder with ' ' space in name:
 -> cd ./Untitled\ Folder
 
---------------------------------------------
-Create & run C file from Treminal:
---------------------------------------------
-create c file:
-	gedit path/folder/file.c
-
-Compile and create object file:
-	gcc -o file file.c
-
-Execute (object name):
-	./file
 
 --------------------------------------------
 Unzip file:
@@ -95,8 +84,8 @@ cp item1 item2
 copy single file/directory (item1) to file/directory (item2)
 
 Wildcards [pg46]:
-*	- All Files
-g*	- Any file beginning with 'g'
+*		- All Files
+g*		- Any file beginning with 'g'
 b* .txt	- Any file beginning with 'b' & ending with '.txt'
 [abc]*	- Any file starting with 'a', 'b' or 'c'
 
@@ -106,16 +95,20 @@ Symbolic Links
 command -options arguments
 ---------------------------
 -a	--all		* List all files (even hidden)
--d	--directory	* Use this option in conjunction 				  with the -l option to see details 				  about the directory rather than its 				  contents.
+-d	--directory	* Use this option in conjunction with 
+					the -l option to see details 
+					about the directory rather than its 
+					contents.
 -F	--classify	* This option will append an indicator 
-			  character to the end of each listed name.
--h	--human-readable * In long format listings, display file 
-			   sizes in human readable format rather 
-			   than in bytes
--l	--		* Display results in long format
+			  		character to the end of each listed name.
+-h	--human-readable 
+				* In long format listings, display file 
+			   		sizes in human readable format rather 
+			   		than in bytes
+-l	--			* Display results in long format
 -r	--reverse	* Display the results in reverse order.
--S	--		* Sort results by file size.
--t	--		* Sort by modification time
+-S	--			* Sort results by file size.
+-t	--			* Sort by modification time
 -i	--interactive	* Prompt the user to overwrite files
 -u	--update	* only files that are new or don't exist
 -v	--verbose	* Display info messages during move
@@ -198,3 +191,16 @@ sudo apt-get purge application
 sudo apt-get purge application*
 ============================================
 
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+	gedit path/folder/file.c
+
+Compile and create object file:
+	gcc -o file file.c
+
+Execute (object name):
+	./file
+
+--------------------------------------------

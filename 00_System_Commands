@@ -19,7 +19,7 @@ View free memory:
 $ free -o -h
 
 -------------------------------------------------------------------------
-View which folder are taking up the most space
+View which folders are taking up the most space:
 -------------------------------------------------------------------------
 $ sudo du -xh / | grep -P "G\t"
 

@@ -15,11 +15,16 @@ Verify if Virtualenv is installed:
 -----------------------------------------------------
 virtualenv --version
 
+-----------------------------------------------------
+List Virtualenvs:
+-----------------------------------------------------
+lsvirtualenv -b
+lsvirtualenv -l
 
 -----------------------------------------------------
 Setup and Use Virtualenv:
 -----------------------------------------------------
--> create a directory:
+-> create a directory (if not already created):
 mkdir ~/virtualenvironment
 
 -> Create the environment:
