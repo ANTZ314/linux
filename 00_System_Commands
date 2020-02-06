@@ -16,7 +16,8 @@ $ cat /proc/cpuinfo
 -------------------------------------------------------------------------
 View free memory:
 -------------------------------------------------------------------------
-$ free -o -h
+$ free -h
+$ df -h
 
 -------------------------------------------------------------------------
 View which folders are taking up the most space:
@@ -40,7 +41,7 @@ OR you could use:
 $ sudo service gdm restart
 
 -------------------------------------------------------------------------
-List aal installed packages:
+List all installed packages:
 $ apt list --installed
 $ dpkg -l
 $ dpkg --get-selections | grep -v deinstall
@@ -86,7 +87,7 @@ Then GParted -> Device -> Create Partition Table
 -------------------------------------------------------------------------
 Memory Checks:
 -------------------------------------------------------------------------
--> lsusb		- List USB devices (and hardware)
+-> lsusb	- List USB devices (and hardware)
 			- Check used/available system memory
 -> lspci | grep USB
 
@@ -174,6 +175,9 @@ $ workon cv
 Exit:
 $ deactivate
 
+Delete:
+rmvirtualenv EnvName
+
 --------------------------------------------
 View which version is installed:
 --------------------------------------------
@@ -187,7 +191,7 @@ $ find / -name "filename*"
 --------------------------------------------
 Permissions:
 --------------------------------------------
-$ chmod 777 *.py	- all permissions aloud for all python files
+$ chmod 777 *.py		- all permissions aloud for all python files
 $ chmod 700 file.ext	- read/write/execute for me only
 
 =========================================================================

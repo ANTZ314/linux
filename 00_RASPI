@@ -16,32 +16,6 @@ List all installed packages:
 -> dpkg --get-selections | less
 -> 'q' to exit
 
-----------------------------------------
-Clone Disk from SD to backup:
-----------------------------------------
--> List all drives & find:
-sudo fdisk -l
-
--> Create the Clone:
-sudo dd if=/dev/sdb of=~/raspbian_backup.img
-
-----------------------------------------
-Write cloned disk image to SD:
-----------------------------------------
--> Make sure that the SD card’s partitions are unmounted:
-
--> List all drives & find:
-sudo fdisk -l
-
--> List mounted drives:
-sudo mount | grep sdb 			(replace sdb with drive name)
-
--> unmount the listed ones:
-sudo umount /dev/sdb1 /dev/sdb2 /dev/sdb3
-
--> Use 'dd' to write the image:
-sudo dd if=~/raspbian_backup.img of=/dev/sdb
-
 ============================================
 ============================================
 SSH Control of the console:
@@ -64,11 +38,11 @@ $ ssh pi@192.168...
 FILE TRANSFER: 
 ============================================
 
-CoPy (SCP) files to the RPi:
+Copy (SCP) files to the RPi:
 -> scp file.ext pi@192.168.x.xxx:/home/pi/
 
 
-CoPy (SCP) files from the RPi:
+Copy (SCP) files from the RPi:
 -> scp pi@192.168.x.xxx:/home/pi/file.ext /home/antz/path
 
 Copy multiple files from local to remote:
@@ -77,8 +51,11 @@ Copy multiple files from local to remote:
 Copy all files from local to remote:
 $ scp * remoteuser@remoteserver:/remote/folder/
 
-Copy all files and folders recursively from local to remote
+Copy all files and folders recursively from local to remote:
 $ scp -r * remoteuser@remoteserver:/remote/folder/
+
+Copy folder and its contents to RPi:
+$ scp -r ~/path/folder pi@19.168.1.101:/home/pi/
 
 --------------------------------------------
 Exit ssh & to return to normal terminal:
@@ -106,14 +83,15 @@ ln          - Create hard and symbolic links
 Open any file in its Default App:
 xdg-open <file_name>
 
-rm -rf filepath/filename
 Remove a file:
+rm -rf filepath/filename
 
+copy multiple items into a directory:
 cp item... directory
-copy multiple items into a directory
 
+
+copy single file/directory (item1) to file/directory (item2):
 cp item1 item2
-copy single file/directory (item1) to file/directory (item2)
 
 Wildcards [pg46]:
 *   - All Files
@@ -141,36 +119,7 @@ command -options arguments
 -u  --update    * only files that are new or don't exist
 -v  --verbose   * Display info messages during move
 
---------------------------------------------
 
-----------------------------------------
-Basic cross compile:
-----------------------------------------
-From RasPi side, copy compiled file from host:
-$ scp antz@192.168.8.103:pidev/test/hello .
-
-Run the compiled file:
-$ ./hello
-
---------------------------------------------
-Create & run C file from Treminal:
---------------------------------------------
-create c file:
-    gedit path/folder/file.c
-
-Compile and create object file:
-    gcc -o file file.c
-
-Execute (object name):
-    ./file
-
---------------------------------------------
-'less' is a Text Viewer:
-open -> less filename	
-* "q" to exit
-* Up/"b" to scroll back a page
-* Down/'space' to scroll forward
-* Up Arrow to scroll up one line [more on pg 40]
 
 ------------------------------------------------------
 To install some file *.tar.gz, you basically would do:
@@ -205,6 +154,66 @@ Most of the times you only need to:
     make
 
     sudo make install
+
+--------------------------------------------
+----------------------------------------
+Clone Disk from SD to backup:
+----------------------------------------
+-> List all drives & find:
+sudo fdisk -l
+
+-> Create the Clone:
+sudo dd if=/dev/sdb of=~/raspbian_backup.img
+-OR-
+sudo dd if=/dev/mmcblk0 bs=4M of=~/Desktop/raspbian_backup.img
+
+----------------------------------------
+Write cloned disk image to SD:
+----------------------------------------
+-> First Make sure that the SD card’s partitions are unmounted:
+
+-> List all drives & find:
+sudo fdisk -l
+
+-> List mounted drives:
+sudo mount | grep sdb           (replace sdb with drive name)
+
+-> unmount the listed ones:
+sudo umount /dev/sdb1 /dev/sdb2 /dev/sdb3
+
+-> Use 'dd' to write the image:
+sudo dd if=~/raspbian_backup.img of=/dev/sdb
+
+
+----------------------------------------
+Basic cross compile:
+----------------------------------------
+From RasPi side, copy compiled file from host:
+$ scp antz@192.168.8.103:pidev/test/hello .
+
+Run the compiled file:
+$ ./hello
+
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+    gedit path/folder/file.c
+
+Compile and create object file:
+    gcc -o file file.c
+
+Execute (object name):
+    ./file
+
+--------------------------------------------
+'less' is a Text Viewer:
+open -> less filename	
+* "q" to exit
+* Up/"b" to scroll back a page
+* Down/'space' to scroll forward
+* Up Arrow to scroll up one line [more on pg 40]
+
 
 ------------------------------------------------------
 To display an image:

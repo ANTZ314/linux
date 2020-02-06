@@ -50,20 +50,22 @@ Find tool but dont know package name:
 Basic Commands:
 --------------------------------------------
 space in file name - use '\ '
-date	 - see date and time
-cal	 - view calendar
-df	 - view free disk space
-pwd	 - Print name of current working directory
-cd	 - Change directory
-cd ..	 - Goto parent folder
-cd ./xx	 - Goto child folder
-ls	 - List directory contents
-cp 	– Copy files and directories
-mv 	– Move/rename files and directories
-mkdir 	– Create directories
-rm 	– Remove files
-rmdir	- Remove directories
-ln 	– Create hard and symbolic links
+date	 	- see date and time
+cal	 		- view calendar
+df	 		- view free disk space
+pwd	 		- Print name of current working directory
+cd	 		- Change directory
+cd ..	 	- Goto parent folder
+cd ./xx	 	- Goto child folder
+ls	 		- List directory contents
+cp 			- Copy files and directories
+mv 			- Move/rename files and directories
+mkdir 		- Create directories
+rm 			- Remove files
+rmdir		- Remove directories
+ln 			- Create hard and symbolic links
+ls -l 		- list files & details
+ls -laSh 	- list all files in size order with file size
 
 Open any file in its Default App:
 xdg-open <file_name>
