@@ -28,6 +28,7 @@ To install some file *.tar.gz:
 Open a console, and go to the directory where the file is
 
 ->  Type: tar -zxv file.tar.gz
+->  Type: tar -zxvf file.tar.gz
 
 Read the file INSTALL and/or README to know if you need some dependencies.
 

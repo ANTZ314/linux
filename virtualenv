@@ -21,6 +21,10 @@ List Virtualenvs:
 lsvirtualenv -b
 lsvirtualenv -l
 
+-ALSO-
+
+ls ~/virtualenvironment/
+
 -----------------------------------------------------
 Setup and Use Virtualenv:
 -----------------------------------------------------
@@ -33,6 +37,8 @@ virtualenv ~/virtualenvironment/my_new_app
 -> To activate:
 source ~/virtualenvironment/my_new_app/bin/activate
 
+eg:
+source ~/virtualenvironment/iot/bin/activate
 
 -----------------------------------------------------
 Exit the environment:
