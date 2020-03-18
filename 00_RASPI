@@ -1,7 +1,3 @@
-
-Launch GUI:
-startx
-
 ----------------------------------------
 Disk Space, Memory Use, and CPU Load:
 ----------------------------------------
@@ -19,14 +15,6 @@ Memory Summary:
 List all installed packages:
 -> dpkg --get-selections | less
 -> 'q' to exit
-
-
-List running process:
--> ps aux
-
-Kill process;
--> kill PID
-
 
 ============================================
 ============================================
