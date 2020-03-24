@@ -1,14 +1,26 @@
 =====================================================
-VIRTUAL ENVIRONMENT:
+VIRTUAL ENVIRONMENT - OPTION 1:
 =====================================================
 
 -----------------------------------------------------
-Install Virtualenv:
+Install Virtualenv (1):
 -----------------------------------------------------
-sudo apt-get install python-virtualenv
-sudo easy_install virtualenv
-sudo pip install virtualenv
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
 
+sudo pip install virtualenv virtualenvwrapper
+sudo rm -rf ~/get-pip.py ~/.cache/pip
+
+sudo nano ~/.profile
+
+-> Write the following:
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+-> Reload the file:
+source ~/.profile
 
 -----------------------------------------------------
 Verify if Virtualenv is installed:
@@ -21,8 +33,28 @@ List Virtualenvs:
 lsvirtualenv -b
 lsvirtualenv -l
 
--ALSO-
+-----------------------------------------------------
+CReate the virtual environmet:
+-----------------------------------------------------
+mkvirtualenv envName -p python3
 
+workon envName
+
+
+
+
+=====================================================
+VIRTUAL ENVIRONMENT - OPTION 1:
+=====================================================
+-----------------------------------------------------
+Install Virtualenv (2):
+-----------------------------------------------------
+sudo apt-get install python-virtualenv
+sudo pip install virtualenv
+
+-----------------------------------------------------
+List Virtualenvs:
+-----------------------------------------------------
 ls ~/virtualenvironment/
 
 -----------------------------------------------------

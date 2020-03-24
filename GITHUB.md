@@ -11,11 +11,11 @@ Password:	--------aPi3
 email: gmail2
 
 #### Pull request URL's:
-[raspi](https://github.com/ANTZ314/raspi.git)
-[opencv](https://github.com/ANTZ314/OpenCV.git)
-[python](https://github.com/ANTZ314/python.git)
-[linux](https://github.com/ANTZ314/linux.git)
-[prediction](https://github.com/ANTZ314/prediction.git)
+https://github.com/ANTZ314/raspi.git
+https://github.com/ANTZ314/OpenCV.git
+https://github.com/ANTZ314/python.git
+https://github.com/ANTZ314/linux.git
+https://github.com/ANTZ314/prediction.git
 
 #### [Cheatsheet:](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
