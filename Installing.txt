@@ -24,6 +24,14 @@ gunzip blah.img.gz
 
 
 ------------------------------------------------------
+Self extracting:
+------------------------------------------------------
+Make executable:
+chmod u+x file.tgz.bin
+Run:
+./file.tgz.bin
+
+------------------------------------------------------
 To install some file *.tar.gz:
 ------------------------------------------------------
 Open a console, and go to the directory where the file is
