@@ -94,3 +94,47 @@ Remove the environment:
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=========================================================================
+Virtual Environment:
+=========================================================================
+Get and Install:
+
+$ sudo pip install virtualenv virtualenvwrapper
+$ sudo rm -rf ~/get-pip.py ~/.cache/pip
+
+$ echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.profile
+$ echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.profile
+$ echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.profile
+$ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.profile
+	
+$ source ~/.profile
+
+--------------------------------------------
+Virtual Environment Commands:
+--------------------------------------------
+List all VirtEnvs:
+$ lsvirtualenv -b
+
+Create new env:
+$ mkvirtualenv EnvName -p python3
+
+To Activate:
+$ workon cv
+
+Exit:
+$ deactivate
+
+Delete:
+rmvirtualenv EnvName
+
+--------------------------------------------
+View which version is installed:
+--------------------------------------------
+-> 'application' --version	[eg. python --version]
+
+--------------------------------------------
+Permissions:
+--------------------------------------------
+$ chmod 777 *.py		- all permissions aloud for all python files
+$ chmod 700 file.ext	- read/write/execute for me only

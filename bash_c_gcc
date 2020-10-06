@@ -1,4 +1,37 @@
 ====================================================
+                    BASH SCRIPT
+====================================================
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+    gedit path/folder/file.c
+
+Compile and create object file:
+    gcc -o file file.c
+
+Execute (object name):
+    ./file
+--------------------------------------------
+        EXAMPLE:
+--------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SHELLSCRIPT "\
+#/bin/bash \n\
+ \n\
+"
+
+int main()
+{
+    puts("Will execute sh with the following script :");
+    system(SHELLSCRIPT);
+    return 0;
+}
+
+--------------------------------------------
+====================================================
         C / GCC / WIRINGPI
 ====================================================
 
@@ -33,40 +66,6 @@ OR
 -> sudo ./test1
 
 ---------------------------------------------------
-====================================================
-                    BASH SCRIPT
-====================================================
---------------------------------------------
-Create & run C file from Treminal:
---------------------------------------------
-create c file:
-	gedit path/folder/file.c
-
-Compile and create object file:
-	gcc -o file file.c
-
-Execute (object name):
-	./file
---------------------------------------------
-		EXAMPLE:
---------------------------------------------
-#include <stdio.h>
-#include <stdlib.h>
-
-#define SHELLSCRIPT "\
-#/bin/bash \n\
- \n\
-"
-
-int main()
-{
-    puts("Will execute sh with the following script :");
-    system(SHELLSCRIPT);
-    return 0;
-}
-
---------------------------------------------
-
 =========================================
 How to install cmake 3.2 on ubuntu 14.04
 =========================================
@@ -105,5 +104,4 @@ With make install
 
         sudo make install
 
-
-
+---------------------------------------------------
