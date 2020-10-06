@@ -1,3 +1,7 @@
+
+Launch GUI:
+startx
+
 ----------------------------------------
 Disk Space, Memory Use, and CPU Load:
 ----------------------------------------
@@ -15,6 +19,14 @@ Memory Summary:
 List all installed packages:
 -> dpkg --get-selections | less
 -> 'q' to exit
+
+
+List running process:
+-> ps aux
+
+Kill process;
+-> kill PID
+
 
 ============================================
 ============================================
@@ -163,12 +175,9 @@ Clone Disk from SD to backup:
 sudo fdisk -l
 
 -> Create the Clone:
-sudo dd if=/dev/mmcblk0 of=~/Desktop/sd_backup.img
+sudo dd if=/dev/sdb of=~/raspbian_backup.img
 -OR-
-sudo dd if=/dev/mmcblk0 bs=4M of=~/Desktop/sd_backup.img
--OR-
-sudo apt-get install gddrescue
-sudo ddrescue /dev/mmcblk0 ~/Desktop/sd_backup.img
+sudo dd if=/dev/mmcblk0 bs=4M of=~/Desktop/raspbian_backup.img
 
 ----------------------------------------
 Write cloned disk image to SD:
