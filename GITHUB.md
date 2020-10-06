@@ -20,6 +20,16 @@ https://github.com/ANTZ314/arduino.git
 
 #### [Cheatsheet:](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
+
+---------------------------------------
+####On new repo creation:
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ANTZ314/rpi_git.git
+git push -u origin main
+
 ---------------------------------------
 [GITHUB Tutorial:](http://rogerdudler.github.io/git-guide/)  
 [POUWH Repo](https://github.com/Antz411/POUWH.git)
@@ -94,9 +104,9 @@ create a working copy of a local repository:
     $ cd path/to/git/folder  
     $ git status
 
----------------------------------------------------
+---------------------------------------
 #### BRANCHING:
----------------------------------------------------
+---------------------------------------
 After cloned into empty folder - Go to folder path:
 
 Make sure you have the master (* master):  
@@ -210,5 +220,23 @@ Fatal: refusing to merge unrelated histories
 Git failing due to unrecognized changes  
 -> Your branch is ahead of 'origin/master' by 2 commits  
 	
-    $ git reset --hard origin/master
+    $ git reset --hard origin/master		- didn't work
+    
+    $ git push origin HEAD:master		- worked
 
+**Remote Origin:**
+list:
+
+	git config --get remote.origin.url
+
+Remove (nope):
+
+	git remote remove https://github.com/ANTZ314/--git_name--.git
+
+Add (nope):
+
+	git remote add https://github.com/ANTZ314/--git_name--.git
+
+Change (workds):
+
+	git remote set-url origin https://github.com/ANTZ314/--git_name--.git

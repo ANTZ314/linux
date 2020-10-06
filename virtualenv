@@ -1,9 +1,57 @@
+-----------------------------------------------------
+List Virtualenvs:
+-----------------------------------------------------
+OPTION (1):
+lsvirtualenv -b 	-OR- 	lsvirtualenv -l
+
+
+OPTION (2):
+ls ~/virtualenvironment/
+
+
 =====================================================
 VIRTUAL ENVIRONMENT - OPTION 1:
 =====================================================
 
 -----------------------------------------------------
 Install Virtualenv (1):
+-----------------------------------------------------
+sudo apt-get install python-virtualenv
+sudo pip install virtualenv
+
+
+-----------------------------------------------------
+Verify if Virtualenv is installed:
+-----------------------------------------------------
+virtualenv --version
+
+
+-----------------------------------------------------
+Create the virtual environmet:
+-----------------------------------------------------
+mkvirtualenv envName -p python3
+
+workon envName
+
+
+-----------------------------------------------------
+Exit the environment:
+-----------------------------------------------------
+deactivate
+
+
+-----------------------------------------------------
+Remove the environment:
+-----------------------------------------------------
+-> Delete the containing folder?
+
+
+=====================================================
+VIRTUAL ENVIRONMENT - OPTION 2:
+=====================================================
+
+-----------------------------------------------------
+Install Virtualenv (2):
 -----------------------------------------------------
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
@@ -22,40 +70,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 -> Reload the file:
 source ~/.profile
 
------------------------------------------------------
-Verify if Virtualenv is installed:
------------------------------------------------------
-virtualenv --version
-
------------------------------------------------------
-List Virtualenvs:
------------------------------------------------------
-lsvirtualenv -b
-lsvirtualenv -l
-
------------------------------------------------------
-CReate the virtual environmet:
------------------------------------------------------
-mkvirtualenv envName -p python3
-
-workon envName
-
-
-
-
-=====================================================
-VIRTUAL ENVIRONMENT - OPTION 1:
-=====================================================
------------------------------------------------------
-Install Virtualenv (2):
------------------------------------------------------
-sudo apt-get install python-virtualenv
-sudo pip install virtualenv
-
------------------------------------------------------
-List Virtualenvs:
------------------------------------------------------
-ls ~/virtualenvironment/
 
 -----------------------------------------------------
 Setup and Use Virtualenv:
@@ -72,13 +86,11 @@ source ~/virtualenvironment/my_new_app/bin/activate
 eg:
 source ~/virtualenvironment/iot/bin/activate
 
------------------------------------------------------
-Exit the environment:
------------------------------------------------------
-deactivate
-
 
 -----------------------------------------------------
 Remove the environment:
 -----------------------------------------------------
 -> Delete the containing folder?
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

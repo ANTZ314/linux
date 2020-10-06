@@ -50,6 +50,9 @@ $ dpkg --get-selections | grep -v deinstall
 Search for specific package:
 apt-cache search package-name
 
+List pip packages:
+pip freezels
+
 -------------------------------------------------------------------------
 Find all files with keyword:
 -------------------------------------------------------------------------
