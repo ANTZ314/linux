@@ -1,6 +1,6 @@
---------------------------------------------
+-----------------------------------------------------------------------
 Basic Navigation:
---------------------------------------------
+-----------------------------------------------------------------------
 Go into child folder from parent:
 -> cd ./folder
 
@@ -14,9 +14,9 @@ Go into Folder with ' ' space in name:
 -> cd ./Untitled\ Folder
 
 
---------------------------------------------
+-----------------------------------------------------------------------
 Basic Commands:
---------------------------------------------
+-----------------------------------------------------------------------
 space in file name - use '\ '
 date	 	- see date and time
 cal	 		- view calendar
@@ -60,43 +60,48 @@ b* .txt	- Any file beginning with 'b' & ending with '.txt'
 [abc]*	- Any file starting with 'a', 'b' or 'c'
 
 
---------------------------------------------
+-----------------------------------------------------------------------
 Unzip file:
---------------------------------------------
+-----------------------------------------------------------------------
 unzip file.zip -d destination_folder
 
---------------------------------------------
+
+-----------------------------------------------------------------------
 Extract .rar folder:
---------------------------------------------
+-----------------------------------------------------------------------
 -> sudo apt-get install unrar		<- if not already
 -> unrar e -r Name.rar
 
---------------------------------------------
+
+-----------------------------------------------------------------------
 Extract img.xz image files:
---------------------------------------------
+-----------------------------------------------------------------------
 unxz filename.img.xz
 
---------------------------------------------
+
+-----------------------------------------------------------------------
 Run file in Default Program:
---------------------------------------------
+-----------------------------------------------------------------------
 -> xdg-open file.ext
 
---------------------------------------------
+
+-----------------------------------------------------------------------
 Download from Youtube:
---------------------------------------------
+-----------------------------------------------------------------------
 Goto folder you want download in:
 sudo youtube-dl (Web-Link)
 
---------------------------------------------
+
+-----------------------------------------------------------------------
 Find tool but dont know package name:
---------------------------------------------
+-----------------------------------------------------------------------
 -> man -k <keyword>
 
 
---------------------------------------------
+-----------------------------------------------------------------------
 Hardlinks
 Symbolic Links
---------------------------------------------
+-----------------------------------------------------------------------
 
 'less' is a Text Viewer:
 open -> less filename	
@@ -106,9 +111,9 @@ open -> less filename
 * Up Arrow to scroll up one line [more on pg 40]
 
 
---------------------------------------------
-All list options:
---------------------------------------------
+-----------------------------------------------------------------------
+All 'list' Options:
+-----------------------------------------------------------------------
 ls -a					- list all files including hidden file starting with '.'
 ls --color				- colored list [=always/never/auto]
 ls -d					- list directories - with ' */'
@@ -126,4 +131,33 @@ ls -t					- sort by time & date
 ls -X					- sort by extension name
 ls -d $PWD/*			- List files and directories with full path
 ls -R | grep '\.png$'	- list names based on extension
---------------------------------------------
+
+
+-----------------------------------------------------------------------
+'grep' Options/Examples:
+-----------------------------------------------------------------------
+1. Search and Find Files:
+	Example:		
+		$ dpkg -l | grep -i python
+	Explanation:
+		-> dpkg –l			= lists installed *.deb packages
+		-> grep –i python	= filter " ignore-case", ignore all but 'python'
+
+2. Search and Filter Files:
+	Example:
+		$ grep –v “#”  /etc/apache2/sites-available/default-ssl
+	Explanation:
+		-> Print all lines in doc that are not commented '#'
+		-> –v option tells grep to invert its output
+
+3. Find all .mp3 Files Only:
+	Example:
+		$ find . –name “*.mp3” | grep –i JayZ | grep –vi “remix”
+	Explanation:
+		-> print all of the files with a *.mp3 extension
+		-> pipe1 - grep –i to filter out & print all files with the name “JayZ”
+		-> pipe2 - grep –vi to filter out and NOT print all filenames with “remix”
+
+
+Continue...
+https://www.tecmint.com/12-practical-examples-of-linux-grep-command/

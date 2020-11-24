@@ -240,3 +240,10 @@ Add (nope):
 Change (workds):
 
 	git remote set-url origin https://github.com/ANTZ314/--git_name--.git
+
+** Cannot Pull Due unmatched Head: **
+
+	#Force Pull
+	git fetch --all
+	git reset --hard origin/master
+	git pull origin master
