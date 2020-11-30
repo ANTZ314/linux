@@ -98,6 +98,16 @@ Find tool but dont know package name:
 -> man -k <keyword>
 
 
+-------------------------------------------------------------------------
+Link 2 images (imagemagic):
+-------------------------------------------------------------------------
+Horizontally:
+convert file1.png file2.png +append out.png 
+
+Vertically:
+convert file1.png file2.png -append out.png 
+
+
 -----------------------------------------------------------------------
 Hardlinks
 Symbolic Links

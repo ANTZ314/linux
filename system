@@ -116,6 +116,20 @@ The apt tool on Ubuntu 14.04 and above makes this very easy.
 $  apt list --installed
 
 
+-------------------------------------------------------------------------
+Fix broken packages:
+-------------------------------------------------------------------------
+$ sudo apt update --fix-missing
+$ sudo apt install -f
+$ sudo dpkg --configure -a
+
+List packages that need to be removed:
+$ sudo dpkg -l | grep ^..r
+
+Remove the package:
+$ sudo dpkg --remove --force-remove --reinstreq
+
+
 =========================================================================
 			CLEANUP:
 =========================================================================
@@ -141,17 +155,6 @@ find /path -type f -name "filename" -delete
 Remove Item from $PATH:
 --------------------------------------------
 -> PATH=$(REMOVE_PART="/opt/specific_item/bin" sh -c 'echo ":$PATH:" | sed "s@:$REMOVE_PART:@:@g;s@^:\(.*\):\$@\1@"')
-
-=========================================================================
-
--------------------------------------------------------------------------
-Link 2 images (imagemagic):
--------------------------------------------------------------------------
-Horizontally:
-convert file1.png file2.png +append out.png 
-
-Vertically:
-convert file1.png file2.png -append out.png 
 
 
 =========================================================================
@@ -213,4 +216,11 @@ Possible USB Hub Reset:
 Force erase a USB:
 -------------------------------------------------------------------------
 wipefs -a /dev/your-device
+
+
 =========================================================================
+Do Full System Update to Newer Ubuntu:
+========================================================================
+$ sudo do-release-upgrade 
+You  may need to run first: 
+$ sudo apt install update-manager-core

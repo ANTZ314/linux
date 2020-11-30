@@ -91,19 +91,6 @@ tar pczf myarchive.tar.gz /home/till/mydocuments
 -> [f] The file option tells tar to create an archive file. Tar will send the output to stdout if this option is omitted.
 
 
---------------------------------------------
-Create & run C file from Treminal:
---------------------------------------------
-create c file:
-	gedit path/folder/file.c
-
-Compile and create object file:
-	gcc -o file file.c
-
-Execute (object name):
-	./file
-
-
 ------------------------------------------------------
 To install "file.run" file:
 ------------------------------------------------------
@@ -117,6 +104,21 @@ Assume the file is called some-app.run and is in the folder /home/user/Downloads
     enter: ./some-app.run
 
     if step 4 fails with a message including 'permission denied', try entering sudo ./some-app.run (you will need to enter your password for this).
+
+
+
+
+--------------------------------------------
+Create & run C file from Treminal:
+--------------------------------------------
+create c file:
+	gedit path/folder/file.c
+
+Compile and create object file:
+	gcc -o file file.c
+
+Execute (object name):
+	./file
 
 
 ============================================
