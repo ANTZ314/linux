@@ -12,8 +12,8 @@ email: gmail2
 
 #### Pull request URL's:
 https://github.com/ANTZ314/raspi.git
-https://github.com/ANTZ314/OpenCV.git
 https://github.com/ANTZ314/python.git
+https://github.com/ANTZ314/OpenCV.git
 https://github.com/ANTZ314/linux.git
 https://github.com/ANTZ314/prediction.git
 https://github.com/ANTZ314/arduino.git
