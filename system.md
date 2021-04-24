@@ -27,29 +27,34 @@
 ---
 #### Find all files with keyword:
 
-	$ find / -name "filename*"					<- case sensitive (entire system)
-	$ find / -iname "filename*"					<- not case sensitive (entire system)
-	$ find ~/dir/ -iname "filename*"			<- in specified directory
+	$ find / -name "filename*"			# case sensitive (entire system)
+	$ find / -iname "filename*"			# not case sensitive (entire system)
+	$ find ~/dir/ -iname "filename*"	# in specified directory
 
 
 ---
-#### Find/List all files with '.png' extension:
+#### Find & List all files with '.png' extension:
 
-	$ ls -R | grep '\.png$'						<- list just their names
-	$ find . -type f -regex ".*\.png" -ls 		<- list each files details
-	$ find / -type f -name “*.conf”				<- All regular files ending in .conf
-	$ find ~/dir -type d -name "folder"			<- Find directory in sub-directories
-	$ find ~/dir -type f -name “xxx*”			<- All files starting with "xxx"
+	$ ls -R | grep '\.png$'					# list just their names
+	$ find . -type f -regex ".*\.png" -ls 	# list each files details
+	$ find / -type f -name “*.conf”			# All regular files ending in .conf
+	$ find ~/dir -type d -name "folder"		# Find directory in sub-directories
+	$ find ~/dir -type f -name “xxx*”		# All files starting with "xxx"
 
+#### Find and delete by extension:
+
+	$ find . -name "*.bak" -type f 				# Check first
+	$ find . -name "*.bak" -type f -delete 		# delete all
 
 ---
-#### Find/List all files that DO NOT end with '.png' extension:
+#### Find files NOT ending in '.png' extension:
 
-	$ find . -type f not -name "*.java"
-	$ find . -type f ! -name "*.java"
+	$ find . -type f not -name "*.png"
+	$ find . -type f ! -name "*.png"
 
-	Multiple Extensions:
-	find . -type f ! -name "*.java" ! -name "*.html"
+Multiple Extensions (png & html):
+
+	find . -type f ! -name "*.png" ! -name "*.html"
 
 
 ---

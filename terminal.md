@@ -24,27 +24,28 @@
 
 Open any file in its Default App:
 
-	xdg-open <file_name>
+	$ xdg-open <file_name>
 
 Remove a file:
 
-	rm -rf filepath/filename
+	$ rm -rf filepath/filename
 
 Remove folder & sub-directories:
 rm -r folder
 
 Remove all sub-directories but not folder:
 
-	rm -rfv dontDeleteMe/*
+	$ rm -rfv dontDeleteMe/*
 
 Copy item to directory:
 
-	cp item directory
+	$ cp item directory
 
 Copy multiple items into a directory:
 
-	cp item1 item2
-	copy single file/directory (item1) to file/directory (item2)
+	$ cp item1 item2
+	
+?? copy single file/directory (item1) to file/directory (item2) ??
 
 Wildcards [pg46]:
 
@@ -53,6 +54,11 @@ Wildcards [pg46]:
 	b* .txt	- Any file beginning with 'b' & ending with '.txt'
 	[abc]*	- Any file starting with 'a', 'b' or 'c'
 
+Print all files in all sub-folders (Recursive directory listing):
+
+	$ ls -R 
+	$ find /dir/ -print
+	$ du -a
 
 ---
 #### Unzip file:
