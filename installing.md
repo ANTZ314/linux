@@ -14,12 +14,9 @@ Then the commands are, from the folder:
 	make
 	sudo make install
 
-
 **Possibly:**
 
 	tl;dr, use tar xf [filename]
-
-
 
 ---
 #### INSTALLING .deb FILES:
@@ -29,12 +26,10 @@ To install use the dpkg command:
 	cd /home/antz/Downloads/
 	sudo dpkg -i debfile.deb
 
-
 ---
 #### Extract any ".gz" file:
 
-gunzip blah.img.gz
-
+	gunzip blah.img.gz
 
 ---
 #### Self extracting:
@@ -45,19 +40,16 @@ Make executable:
 	Run:
 	./file.tgz.bin
 
-
 ---
 #### Unzip file:
 
 	unzip file.zip -d destination_folder
-
 
 ---
 #### Extract .rar folder:
 
 	-> sudo apt-get install unrar		<- if not already
 	-> unrar e -r Name.rar
-
 
 ---
 #### To install some file *.tar.gz:
@@ -80,7 +72,6 @@ Most of the times you only need to:
 	->  make
 	->  sudo make install
 
-
 ---
 #### Create tar.gz Files:
 
@@ -90,7 +81,6 @@ Most of the times you only need to:
 * [c] Stands for create. This option is mandatory when a file is created.
 * [z] The z option enables gzip compression.
 * [f] The file option tells tar to create an archive file. Tar will send the output to stdout if this option is omitted.
-
 
 ---
 #### To install "file.run" file:
@@ -110,7 +100,6 @@ if step 4 fails with a message including 'permission denied', try entering:
 
 (you will need to enter your password for this).
 
-
 ---
 #### Create & run C file from Treminal:
 
@@ -125,7 +114,6 @@ Compile and create object file:
 Execute (object name):
 
 	./file
-
 
 ---
 ## To Completely Remove a Package:
