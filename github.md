@@ -1,49 +1,58 @@
-----------------
 # GITHUB COMMANDS:
-----------------
 
-Username: 	ANTZ--1  
-Password:	(cap)-------a--1
-email: infinitum?
+### New Git Token:
 
-Username: 	ANTZ3--  
-Password:	--------aPi3
-email: gmail2
+	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
+
+## Access Control:
+
+| First Git |	Credentials |
+|-|-|
+| Username: 	| ANTZ--1 |
+|Password:	| (cap)-------a--1 |
+|email: 		| infinitum? |
+
+| Second Git |	Credentials |
+|-|-|
+| Username: 	| ANTZ3-- |
+| Password:	| --------aPi3 | 
+| email: 		| gmail2 |
+
 
 #### Pull request URL's:
-https://github.com/ANTZ314/raspi.git
-https://github.com/ANTZ314/python.git
-https://github.com/ANTZ314/OpenCV.git
-https://github.com/ANTZ314/linux.git
-https://github.com/ANTZ314/prediction.git
-https://github.com/ANTZ314/arduino.git
+
+	https://github.com/ANTZ314/raspi.git
+	https://github.com/ANTZ314/python.git
+	https://github.com/ANTZ314/OpenCV.git
+	https://github.com/ANTZ314/linux.git
+	https://github.com/ANTZ314/prediction.git
+	https://github.com/ANTZ314/arduino.git
 
 #### [Cheatsheet:](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
-
----------------------------------------
+---
 ####On new repo creation:
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ANTZ314/rpi_git.git
-git push -u origin main
+	$ git init
+	$ git add README.md
+	$ git commit -m "first commit"
+	$ git branch -M main
+	$ git remote add origin https://github.com/ANTZ314/rpi_git.git
+	$ git push -u origin main
 
----------------------------------------
+---
 [GITHUB Tutorial:](http://rogerdudler.github.io/git-guide/)  
 [POUWH Repo](https://github.com/Antz411/POUWH.git)
 
----------------------------------------
+---
 #### To get a single file:
 First navigate to the file, then click the  **RAW** button.
 Use the raw URL in the following **wget** command:
 
 	$ wget -O filename.py https://raw.githubusercontent.com/ANTZ314/Crypto/master/My_Crypto/rnn%5B2018%5D.py
 
-----------------------------
+---
 #### Replace GIT folder on local system:  
-----------------------------
+
 **(include updates)**
 Back up the entire folder with all changes to update to the Github Repo  
 Delete the entire folder from the directory you want the master folder to be.  
@@ -115,11 +124,11 @@ Make sure you have the master (* master):
 
 Get the latest updates:  
 
-	$ git pull origin master				-> git pull https://github.com/Antz411/POUWH.git master
+	$ git pull origin master	# git pull https://github.com/Antz411/POUWH.git master
 
 Now create a branch of the latest:  
 
-	$ git checkout -b new-branch-name			-> git checkout -b POUWH_Branch
+	$ git checkout -b new-branch-name	#git checkout -b POUWH_Branch
 
 Check that you're now on that branch (* new-branch)
 
@@ -131,7 +140,7 @@ Check that you're now on that branch (* new-branch)
 
 Add the new changes to repo-branch:  
 
-	$ git add File_Names.ext				-> git add POUWH_1.X
+	$ git add File_Names.ext		# git add POUWH_1.X
 
 Check changes:
 
@@ -154,7 +163,7 @@ Switch back to master
 
 and delete the branch again  
 
-	$ git branch -d feature_x				-> git checkout -b POUWH_Branch
+	$ git branch -d feature_x	# git checkout -b POUWH_Branch
 
 Branch is not available to others unless you push the branch to your remote repository:  
 
@@ -163,9 +172,9 @@ Branch is not available to others unless you push the branch to your remote repo
 -----------------------------------------------------
 First add the proposed changes (add it to the Index):  
     
-    $ git add <filename>		- add specified file  
-    $ git add *			- ?  
-    $ git add .			- adds all in the folder  
+    $ git add <filename>	# add specified file  
+    $ git add *				# ?  
+    $ git add .				# adds all in the folder  
 
 To add to remote repo (or check origin exists):  
 
