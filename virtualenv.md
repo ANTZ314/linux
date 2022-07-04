@@ -47,6 +47,10 @@ Delete:
 
 	$ rmvirtualenv EnvName
 
+Update all packages:
+
+	$ pipenv shell
+	$ pipenv update
 
 ---
 ## VIRTUAL ENVIRONMENT - OPTION 2:

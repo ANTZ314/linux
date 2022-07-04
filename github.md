@@ -1,23 +1,34 @@
 # GITHUB COMMANDS:
 
-### New Git Token:
+### Git Token:
 
-	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
+| Version	| Token	|
+|-|-|
+| V01	| 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 |
+| V02	| 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  |
+| V03	| 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   |
 
 ## Access Control:
 
-| First Git |	Credentials |
+| 1st Git |	Credentials |
 |-|-|
 | Username: 	| ANTZ--1 |
 |Password:	| (cap)-------a--1 |
 |email: 		| infinitum? |
 
-| Second Git |	Credentials |
+| 2nd Git |	Credentials |
 |-|-|
 | Username: 	| ANTZ3-- |
-| Password:	| --------aPi3 | 
+| Password:	| --------ap3 | 
 | email: 		| gmail2 |
 
+### Get token:
+* Settings 
+* Developer Setings (left-bottom)
+* Personal Access Tokens
+* Generate Tokens
+* Tick everything??
+* Generate
 
 #### Pull request URL's:
 
@@ -217,14 +228,20 @@ Before merging changes, you can also preview them by using
 -----------------------------------------------
 ### GIT ERRORS:
 -----------------------------------------------
-fatal: 'origin' does not appear to be a git repository  
-* git remote -v  
-* git remote add origin https://github.com/Antz411/POUWH.git  
-* git push origin master  
-* git remote remove origin
+Force a push to repo:
+
+	git push https://git.... --force
+
+fatal: 'origin' does not appear to be a git repository
+	
+	git remote -v
+	git remote add origin https://github.com/Antz411/POUWH.git
+	git push origin master
+	git remote remove origin
 
 Fatal: refusing to merge unrelated histories  
-* git pull https://github.com/path.git --allow-unrelated-histories
+
+	git pull https://github.com/path.git --allow-unrelated-histories
 
 Git failing due to unrecognized changes  
 -> Your branch is ahead of 'origin/master' by 2 commits  

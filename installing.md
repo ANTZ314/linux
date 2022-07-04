@@ -44,6 +44,10 @@ Make executable:
 #### Unzip file:
 
 	unzip file.zip -d destination_folder
+	
+#### Undo/Reverse Unzip:
+
+	unzip -Z -1 /path/to/zip/file.zip | xargs -I{} rm -rf {}
 
 ---
 #### Extract .rar folder:

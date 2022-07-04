@@ -27,10 +27,10 @@
 ---
 #### Find all files with keyword:
 
+	$ find ~/dir/ -iname "filename*"	 # in specified **directory**
 	$ find / -name "filename*"			# case sensitive (entire system)
 	$ find / -iname "filename*"			# not case sensitive (entire system)
-	$ find ~/dir/ -iname "filename*"	# in specified directory
-
+	$ find 	# find directory
 
 ---
 #### Find & List all files with '.png' extension:
