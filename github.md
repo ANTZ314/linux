@@ -4,9 +4,11 @@
 
 | Version	| Token	|
 |-|-|
-| V01	| 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 |
-| V02	| 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  |
-| V03	| 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   |
+| V01	| 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  |
+| V02	| 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   |
+| V03	| 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    |
+| V04	| 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   |
+| ALL ACCESS| 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 |
 
 ## Access Control:
 
@@ -27,7 +29,7 @@
 * Developer Setings (left-bottom)
 * Personal Access Tokens
 * Generate Tokens
-* Tick everything??
+* Tick everything
 * Generate
 
 #### Pull request URL's:
@@ -43,13 +45,22 @@
 
 ---
 ####On new repo creation:
-	$ git init
-	$ git add README.md
-	$ git commit -m "first commit"
-	$ git branch -M main
-	$ git remote add origin https://github.com/ANTZ314/rpi_git.git
-	$ git push -u origin main
 
+* Create new repo in Gihub
+* Then loacally:
+```
+$ mkdir 'same name as repo'
+$ cd 'new_dir'
+$ git init
+$ git remote add origin https://github.com/ANTZ314/rpi_git.git
+```
+Add files / make changes:
+```
+$ git add .
+$ git commit -m "first commit"
+$ git branch -M main
+$ git push -u origin main
+```
 ---
 [GITHUB Tutorial:](http://rogerdudler.github.io/git-guide/)  
 [POUWH Repo](https://github.com/Antz411/POUWH.git)
