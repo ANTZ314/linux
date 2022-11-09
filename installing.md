@@ -1,5 +1,19 @@
 # INSTALLING & REMOVING FILES/PACKAGES:
 
+### Updating multiple PIP packages:
+
+1. Output a list of installed packages to test file:
+```
+pip freeze > requirements.txt
+```
+2. Change all "==" to ">="
+```
+Sublime Editor -> highlight "==" -> Find -> Replace -> change to ">=" -> Replace All
+```
+3. Run update:
+```
+pip install -r requirements.txt --upgrade
+```
 
 ---
 #### To install *.tar.xz:

@@ -5,7 +5,6 @@
 
 	$ ifconfig
 
-
 ---
 #### View CPU information:
 
@@ -17,12 +16,10 @@
 	$ free -h
 	$ df -h
 
-
 ---
 #### View which folders are taking up the most space:
 
 	$ sudo du -xh / | grep -P "G\t"
-
 
 ---
 #### Find all files with keyword:
@@ -55,7 +52,6 @@
 Multiple Extensions (png & html):
 
 	find . -type f ! -name "*.png" ! -name "*.html"
-
 
 ---
 #### Find specific process running:
