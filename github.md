@@ -2,17 +2,11 @@
 
 ### Git Token:
 
-| Version	| Token	|
-|-|-|
-| V01	| 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  |
-| V02	| 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   |
-| V03	| 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    |
-| V04	| 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   |
-| ALL ACCESS| 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 |
-| ALL ACCESS| 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 |
-
 **Get Token:**
-settings -> Developer Settings -> Personal access tokens
+
+	settings -> Developer Settings -> Personal access tokens
+
+**ALL ACCESS TOKEN:** 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 
 
 ## Access Control:
 

@@ -98,19 +98,21 @@ cat /proc/driver/nvidia/version
 ```
 **CUDA Check:**
 ```
-conda list cudatoolkit		<-- 11.7.0
-conda list cudnn			<-- 8.4.1.50
-nvcc --version				<-- not found
+conda list cudatoolkit		<-- 11.7.0 		<-- 10.1.243
+conda list cudnn			<-- 8.4.1.50 	<-- 7.6.5
+nvcc --version				<-- not found	<-- same
 ```
 **Tensoflow Check:**
 ```
 import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+>>> Num GPUs Available:  1
 ```
 **CUDA Check:**
 ```
->>> import torch
->>> print(torch.version.cuda)	<-- 11.2
+import torch
+print(torch.version.cuda)
+>>> none						<-- was 11.2
 ```
 **Sub-Packages Check:**
 ```

@@ -1,31 +1,68 @@
 # ANACONDA NOTES:
 
-### Launch Navigator:
-
-	anaconda-navigator
-
-### Auto activating Conda:
-
-	conda config --set auto_activate_base False
-	source ~/.bashrc
-
-	conda config --set auto_activate_base True
-	source ~/.bashrc
+### Install Anaconda:
+```
+sudo apt install curl
+mkdir tmp
+cd tmp
+curl -O https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+bash Anaconda3-2022.10-Linux-x86_64.sh
+source ~/.bashrc
+```
 
 ### Update CONDA:
+```
+conda -V
+conda update conda
+conda update anaconda
+```
 
-	conda update anaconda
+## Use CONDA:
+```
+conda info --envs 	# List environments
+conda activate name	# Activate
+conda deactivate	# exit
+```
+
+
+## SPYDER:
+
+**INSTALL**
+```
+conda create -c conda-forge -n spyder-env spyder numpy scipy pandas matplotlib sympy cython
+```
+#### Update to latest version:
+```
+conda update -n base conda
+conda activate spyder-env
+conda update spyder
+```
+
+### Install CUDA Toolkit:
+
+**Install conda-forge:**
+```
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
+```
+
+**Install CUDA & CUDNN:**
+With CONDA:
+```
+# - LIST -
+conda search cudatoolkit --channel conda-forge
+conda search cudnn --channel conda-forge
+# - Install -
+conda install cudatoolkit					<-- 'nvcc' still version not found
+conda install cudnn
+```
 
 ### Install pytorch:
+```
+conda install -c pytorch pytorch
+```
 
-	conda install -c pytorch pytorch
-	
-### SPYDER:
-
-#### Update to latest version:
-
-	conda update anaconda
-	conda install spyder=5.1.5	# Failed
 
 #### NOTES:
 * F5 - Run current file
