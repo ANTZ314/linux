@@ -4,6 +4,24 @@
 > MSI - 11th Gen Intel® Core™ i7-11800H @ 2.30GHz × 16
 > NVIDIA Corporation GA106M [GeForce RTX 3060 Mobile
 > 16Gb RAM running Ubuntu 22.04
+## [1] NVIDIA DRIVER OPTIONS:
+
+**Suggested Driver Settings:**
+Version: 			515.76
+Release Date: 		2022.9.20
+Operating System: 	Linux 64-bit
+Language: 			English (US)
+File Size: 			347.96 MB 
+
+
+### Install Nvidia Driver:
+V01 [2021]:
+```
+sudo ubuntu-drivers list				# List available drivers
+#sudo ubuntu-drivers install			# Install best match driver
+sudo ubuntu-drivers install nvidia:515 	# Install specified driver
+reboot
+```
 
 ### Install Anaconda:
 ```
@@ -19,25 +37,12 @@ conda update conda
 conda update anaconda
 ```
 
-### Install Nvidia Driver:
-V01 [2021]:
-```
-sudo ubuntu-drivers list				# List available drivers
-sudo ubuntu-drivers install nvidia:515 	# Install specified driver
-reboot
-```
-
 
 ### Create and run Conda Virtual with Spyder 5:
+
 **INSTALL**
 ```
 conda create -c conda-forge -n spyder-env spyder numpy scipy pandas matplotlib sympy cython
-```
-**USE CONDA-FORGE:**
-```
-conda activate spyder-env
-conda config --env --add channels conda-forge
-conda config --env --set channel_priority strict
 ```
 
 **UPDATE:**
@@ -68,21 +73,23 @@ With CONDA:
 # - LIST -
 conda search cudatoolkit --channel conda-forge
 conda search cudnn --channel conda-forge
+
 # - Install -
-conda install cudatoolkit					<-- 'nvcc' still version not found
+conda install cudatoolkit						<-- 'nvcc' still version not found
 conda install cudnn
 ```
-
 
 ### Install missing packages:
 ```
 conda install pytorch
 ```
 * Included cudatoolkit / cudnn / matplotlib / pandas / numpy
-* Non Included: torchvision / tensorflow-gpu / sklearn / keras
+
+### If Non Included: 
 ```
-conda install torchvision
-conda install tensorflow-gpu				<-- GPU: 1
+conda install -c pytorch torchvision
+conda install -c conda-forge keras
+conda install -c anaconda tensorflow-gpu		<-- GPU: 1
 conda install -c conda-forge scikit-learn
 ```
 
@@ -90,6 +97,7 @@ conda install -c conda-forge scikit-learn
 ### Check Installations:
 ================================================================
 conda activate spyder-env
+conda activate vit-env
 
 **Driver Check:**
 ```
@@ -98,9 +106,9 @@ cat /proc/driver/nvidia/version
 ```
 **CUDA Check:**
 ```
-conda list cudatoolkit		<-- 11.7.0 		<-- 10.1.243
-conda list cudnn			<-- 8.4.1.50 	<-- 7.6.5
-nvcc --version				<-- not found	<-- same
+conda list cudatoolkit			<-- 11.7.0 		<-- 10.1.243
+conda list cudnn				<-- 8.4.1.50 	<-- 7.6.5
+nvcc --version					<-- not found	<-- same
 ```
 **Tensoflow Check:**
 ```
@@ -112,13 +120,11 @@ print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 ```
 import torch
 print(torch.version.cuda)
->>> none						<-- was 11.2
+>>> 10.2						<-- was 11.2
 ```
 **Sub-Packages Check:**
 ```
-import tensorflow as tf
 import keras
-import torch
 import sklearn
 import matplotlib
 import pandas
