@@ -59,7 +59,7 @@ Add your SSH private key to the SSH agent:
 
 ### Change the remote URL to use SSH instead of HTTPS:
 
-	$ git remote set-url origin git@github.com:ANTZ314/linux.git
+	$ git remote set-url origin git@github.com:ANTZ314/REPO.git
 
 
 ---
