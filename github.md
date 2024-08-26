@@ -1,27 +1,6 @@
 # GITHUB COMMANDS:
 
 
-### Configure the local GIT client:
-
-	$ git config --global user.name "ANTZ314"
-	$ git config --global user.email "antony.smith411@gmail.com"
-	$ git config -l
-	$ git config --global credential.helper cache
-
-### Git Token:
-
-| Version	| Token	|
-|-|-|
-| V01	| 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  |
-| V02	| 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   |
-| V03	| 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    |
-| V04	| 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   |
-| ALL ACCESS| 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 |
-| ALL ACCESS| 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 |
-
-**Get Token:**
-settings -> Developer Settings -> Personal access tokens
-
 ## Access Control:
 
 | 1st Git |	Credentials |
@@ -36,13 +15,58 @@ settings -> Developer Settings -> Personal access tokens
 | Password:		| --------ap3 | 
 | email: 		| gmail2 |
 
-### Get token:
-* Settings 
-* Developer Setings (left-bottom)
-* Personal Access Tokens
-* Generate Tokens
-* Tick everything
-* Generate
+
+### Configure the local GIT client:
+
+	$ git config --global user.name "ANTZ314"
+	$ git config --global user.email "antony.smith411@gmail.com"
+	$ git config -l
+	$ git config --global credential.helper cache
+
+### Generate a New SSH Key
+
+	$ ssh-keygen -t ed25519 -C "antony.smith411@gmail.com"
+
+### Add the SSH Key to Your GitHub Account
+
+Start the SSH agent in the background:
+
+	$ eval "$(ssh-agent -s)"
+
+Add your SSH private key to the SSH agent:
+
+	$ ssh-add ~/.ssh/id_ed25519
+
+### Add the SSH Key to Your GitHub Account:
+
+* Copy the SSH key to your clipboard:
+```
+	$ cat ~/.ssh/id_ed25519.pub
+```
+* Copy the content of the file that is displayed in the terminal.
+* Go to GitHub and log in.
+* In the top right corner, click your profile photo, then click Settings.
+* In the user settings sidebar, click SSH and GPG keys.
+* Click New SSH key or Add SSH key.
+* In the "Title" field, add a descriptive label for the new key.
+* Paste your key into the "Key" field (the whole line is the key).
+* Click Add SSH key.
+* You may be asked to confirm your GitHub password.
+
+### Test Your SSH Connection:
+
+	ssh -T git@github.com
+
+### Change the remote URL to use SSH instead of HTTPS:
+
+	$ git remote set-url origin git@github.com:ANTZ314/linux.git
+
+
+---
+### Git Token:
+
+**Get Token:** settings -> Developer Settings -> Personal access tokens
+
 
 #### Pull request URL's:
 
@@ -58,7 +82,7 @@ https://github.com/ANTZ314/arduino.git
 #### [Cheatsheet:](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
 
 ---
-####On new repo creation:
+#### On new repo creation:
 
 * Create new repo in Gihub
 * Then loacally:
