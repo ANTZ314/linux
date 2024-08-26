@@ -1,5 +1,13 @@
 # GITHUB COMMANDS:
 
+
+### Configure the local GIT client:
+
+	$ git config --global user.name "ANTZ314"
+	$ git config --global user.email "antony.smith411@gmail.com"
+	$ git config -l
+	$ git config --global credential.helper cache
+
 ### Git Token:
 
 | Version	| Token	|
