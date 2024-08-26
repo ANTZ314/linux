@@ -55,7 +55,7 @@ Add your SSH private key to the SSH agent:
 
 ### Test Your SSH Connection:
 
-	ssh -T git@github.com
+	$ ssh -T git@github.com
 
 ### Change the remote URL to use SSH instead of HTTPS:
 
