@@ -2,24 +2,30 @@
 
 ### Git Token:
 
+| Version	| Token	|
+|-|-|
+| V01	| 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  |
+| V02	| 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   |
+| V03	| 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    |
+| V04	| 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   |
+| ALL ACCESS| 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 |
+| ALL ACCESS| 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 |
+
 **Get Token:**
-
-	settings -> Developer Settings -> Personal access tokens
-
-**ALL ACCESS TOKEN:** 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 
+settings -> Developer Settings -> Personal access tokens
 
 ## Access Control:
 
 | 1st Git |	Credentials |
 |-|-|
 | Username: 	| ANTZ--1 |
-|Password:	| (cap)-------a--1 |
+|Password:		| (cap)-------a--1 |
 |email: 		| infinitum? |
 
 | 2nd Git |	Credentials |
 |-|-|
 | Username: 	| ANTZ3-- |
-| Password:	| --------ap3 | 
+| Password:		| --------ap3 | 
 | email: 		| gmail2 |
 
 ### Get token:
@@ -59,7 +65,7 @@ Add files / make changes:
 $ git add .
 $ git commit -m "first commit"
 $ git branch -M main
-$ git push -u origin main
+$ git push -u origin main/master
 ```
 ---
 [GITHUB Tutorial:](http://rogerdudler.github.io/git-guide/)  

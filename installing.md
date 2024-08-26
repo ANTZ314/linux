@@ -119,6 +119,13 @@ if step 4 fails with a message including 'permission denied', try entering:
 (you will need to enter your password for this).
 
 ---
+#### To install "file.sh.zip" file:
+
+	unzip file.sh.zip
+	sudo chmod +x file.sh
+	sudo ./file.sh
+
+---
 #### Create & run C file from Treminal:
 
 create c file:
