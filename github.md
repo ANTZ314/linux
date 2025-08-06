@@ -84,7 +84,7 @@ https://github.com/ANTZ314/arduino.git
 ---
 #### On new repo creation:
 
-* Create new repo in Gihub
+* Create new repo in Github
 * Then loacally:
 ```
 $ mkdir 'same name as repo'

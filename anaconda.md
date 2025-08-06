@@ -24,6 +24,14 @@ conda activate name	# Activate
 conda deactivate	# exit
 ```
 
+### Recreate the Virtual Environment
+
+To recreate previous venv:
+```
+conda create --name env_name
+conda activate env_name
+pip install -r requirements.txt
+```
 
 ## SPYDER:
 
@@ -76,3 +84,10 @@ For example:
 
 	$ conda install scikit-learn-intelex
 	$ python -m sklearnex my_application.py
+
+
+### Remove Conda Env:
+
+```
+$ conda env remove --name ENV_NAME
+```

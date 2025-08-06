@@ -16,7 +16,7 @@ pip install -r requirements.txt --upgrade
 ```
 
 ---
-#### To install *.tar.xz:
+#### To install file.tar.xz:
 
 Decompress (expand the contents):
 
@@ -37,7 +37,7 @@ Then the commands are, from the folder:
 
 To install use the dpkg command:
 
-	cd /home/antz/Downloads/
+	cd /file/location/
 	sudo dpkg -i debfile.deb
 
 ---
@@ -58,7 +58,7 @@ Make executable:
 #### Unzip file:
 
 	unzip file.zip -d destination_folder
-	
+
 #### Undo/Reverse Unzip:
 
 	unzip -Z -1 /path/to/zip/file.zip | xargs -I{} rm -rf {}
@@ -70,7 +70,7 @@ Make executable:
 	-> unrar e -r Name.rar
 
 ---
-#### To install some file *.tar.gz:
+#### To install some file file.tar.gz:
 
 Open a console, and go to the directory where the file is:
 
@@ -109,7 +109,7 @@ Open a terminal (Applications->Accessories->Terminal).
 
     enter: cd /home/user/Downloads
     enter: chmod +x some-app.run
-
+    
     enter: ./some-app.run
 
 if step 4 fails with a message including 'permission denied', try entering:
@@ -156,10 +156,10 @@ Also:
 
 	sudo apt-get remove application
 	sudo apt-get remove application*
-
+	
 	sudo apt-get remove --purge application
 	sudo apt-get remove --purge application*
-
+	
 	sudo apt-get purge application
 	sudo apt-get purge application*
 
