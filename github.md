@@ -14,7 +14,16 @@
 | Username: 	| ANTZ3-- |
 | Password:		| --------ap3 | 
 | email: 		| gmail2 |
+| PAToken		| /00_LOGINS/ACCESS |
 
+
+#### Add files / make changes:
+```
+$ git add .
+$ git commit -m "first commit"
+$ git branch -M main
+$ git push -u origin main/master
+```
 
 ### Configure the local GIT client:
 

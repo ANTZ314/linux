@@ -1,5 +1,6 @@
 # INSTALLING & REMOVING FILES/PACKAGES:
 
+
 ### Updating multiple PIP packages:
 
 1. Output a list of installed packages to test file:
@@ -16,32 +17,14 @@ pip install -r requirements.txt --upgrade
 ```
 
 ---
-#### To install file.tar.xz:
-
-Decompress (expand the contents):
-
-	tar xf [filename]
-
-Then the commands are, from the folder:
-
-	./configure
-	make
-	sudo make install
-
-**Possibly:**
-
-	tl;dr, use tar xf [filename]
-
----
-#### INSTALLING .deb FILES:
+#### .deb:
 
 To install use the dpkg command:
 
-	cd /file/location/
 	sudo dpkg -i debfile.deb
 
 ---
-#### Extract any ".gz" file:
+#### Extract ".gz":
 
 	gunzip blah.img.gz
 
@@ -64,13 +47,30 @@ Make executable:
 	unzip -Z -1 /path/to/zip/file.zip | xargs -I{} rm -rf {}
 
 ---
-#### Extract .rar folder:
+#### Extract .rar:
 
 	-> sudo apt-get install unrar		<- if not already
 	-> unrar e -r Name.rar
 
 ---
-#### To install some file file.tar.gz:
+#### .tar.xz:
+
+Decompress (expand the contents):
+
+	tar xf [filename]
+
+Then the commands are, from the folder:
+
+	./configure
+	make
+	sudo make install
+
+**Possibly:**
+
+	tl;dr, use tar xf [filename]
+
+---
+#### Extract .tar.gz:
 
 Open a console, and go to the directory where the file is:
 
